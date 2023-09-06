@@ -7,7 +7,14 @@ module.exports = withMT({
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '300': '700px',
+      },
+      borderRadius: {
+        '200': '310px'
+      }
+    },
   },
   plugins: [],
 });
