@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, MobileNav, Typography, Button, IconButton, Card, Collapse } from '@material-tailwind/react';
+import logo from '../assets/alfafood_logo.png';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
+  const logo = require('../assets/alfafood_logo.png');
 
   useEffect(() => {
     window.addEventListener(
@@ -16,7 +18,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -26,7 +28,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -36,7 +38,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -46,7 +48,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -56,7 +58,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -66,7 +68,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -76,7 +78,7 @@ export default function Navigation() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -87,18 +89,12 @@ export default function Navigation() {
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
-        >
-          Material Tailwind
-        </Typography>
+    <div className="mx-auto min-w-screen py-2 px-4 lg:px-8 lg:py-4 bg-black">
+      <div className="container mx-auto flex items-center justify-between text-white">
+        <img src={logo} alt="Alfafood Logo" className='h-10' />
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Buy Now</span>
+          <span>Login</span>
         </Button>
         <IconButton
           variant="text"
@@ -142,10 +138,10 @@ export default function Navigation() {
         <div className="container mx-auto">
           {navList}
           <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
+            <span>Login</span>
           </Button>
         </div>
       </MobileNav>
-    </Navbar>
+    </div>
   )
 }
