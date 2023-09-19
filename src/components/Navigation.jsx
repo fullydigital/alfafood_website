@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, MobileNav, Typography, Button, IconButton, Card, Collapse } from '@material-tailwind/react';
-import logo from '../assets/alfafood_logo.png';
+import { MobileNav, Typography, Button, IconButton } from '@material-tailwind/react';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
@@ -21,7 +20,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="home" className="flex items-center">
           Home
         </a>
       </Typography>
@@ -31,7 +30,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="branches" className="flex items-center">
           Filialen
         </a>
       </Typography>
@@ -41,7 +40,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="offers" className="flex items-center">
           Angebote
         </a>
       </Typography>
@@ -51,7 +50,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="aboutus" className="flex items-center">
           Über uns
         </a>
       </Typography>
@@ -61,7 +60,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="carrer" className="flex items-center">
           Karriere
         </a>
       </Typography>
@@ -71,7 +70,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="franchise" className="flex items-center">
           Franchise
         </a>
       </Typography>
@@ -81,7 +80,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="contact" className="flex items-center">
           Kontakt
         </a>
       </Typography>
