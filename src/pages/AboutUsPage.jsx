@@ -33,7 +33,16 @@ export default function AboutUsPage() {
       </div>
       {/* divider end */}
       {/* members start */}
-      <div></div>
+      <div className='flex flex-row'>
+        <div className='flex flex-col basis-3/5 items-start pl-28 pt-6'>
+          <h2 className='text-4xl font-semibold text-green-800 mb-8'>Roni Burcak</h2>
+          <p className='text-left leading-7 w-3/4'>Der Patriarch der Familie und Gründer von SmithTech Solutions. James ist ein visionärer Unternehmer mit über 30 Jahren Erfahrung in der IT-Branche. Seine Entschlossenheit und sein Geschäftssinn haben das Unternehmen von bescheidenen Anfängen zu einem Global Player in der Branche gemacht. Als Familienvater ist er ein liebevoller Mentor und hat seine Leidenschaft für Technologie an seine Kinder weitergegeben.</p>
+        </div>
+        <div className='basis-2/5'>
+          <img className='w-60 ml-20' src={require('../assets/person.jpg')} alt="Roni Burcak" />
+        </div>
+      </div>
+      <div className='w-full h-2 bg-black mb-20 mt-20'></div>
       {/* members end */}
     </>
   )
