@@ -4,7 +4,7 @@ import logo from '../assets/alfafood_logo.png';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
-  const logo = require('../assets/alfafood_logo.png');
+  const logo = require('../assets/Alfafood_logo_white.png');
 
   useEffect(() => {
     window.addEventListener(
@@ -89,7 +89,7 @@ export default function Navigation() {
   );
 
   return (
-    <div className="mx-auto min-w-screen py-2 px-4 lg:px-8 lg:py-4 bg-black">
+    <div className="mx-auto min-w-screen py-2 px-4 lg:px-8 lg:py-4 bg-black z-10 relative">
       <div className="container mx-auto flex items-center justify-between text-white">
         <img src={logo} alt="Alfafood Logo" className='h-10' />
         <div className="hidden lg:block">{navList}</div>
