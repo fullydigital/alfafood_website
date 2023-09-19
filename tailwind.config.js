@@ -9,11 +9,15 @@ module.exports = withMT({
   theme: {
     extend: {
       spacing: {
+        '200': '400px',
         '300': '600px',
         '400': '800px'
       },
       borderRadius: {
         '200': '400px'
+      },
+      grayscale: {
+        '50': '70%'
       }
     },
   },
