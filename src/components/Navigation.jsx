@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MobileNav, Typography, Button, IconButton } from '@material-tailwind/react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);

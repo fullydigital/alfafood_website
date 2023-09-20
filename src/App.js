@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import AboutUsPage from './pages/AboutUsPage';
 import LocationPage from './pages/LocationPage';
-import { Switch } from '@material-tailwind/react';
 
 function App() {
   return (
