@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MobileNav, Typography, Button, IconButton } from '@material-tailwind/react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
@@ -20,9 +21,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="home" className="flex items-center">
+        <NavLink to="/" className="flex items-center">
           Home
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -30,9 +31,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="branches" className="flex items-center">
+        <NavLink to="location" className="flex items-center">
           Filialen
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -50,9 +51,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="aboutus" className="flex items-center">
+        <NavLink to="about" className="flex items-center">
           Über uns
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
