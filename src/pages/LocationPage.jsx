@@ -66,8 +66,9 @@ export default function LocationPage() {
             <p className='w-9/12 mt-6'>Melde dich über den QR-Code zu unserem WhatsApp Newsletter an um kein Angebot mehr zu verpassen</p>
             <button className='bg-green-700 text-white pr-16 pl-6 py-3 mt-8 text-left'>Per Email anmelden</button>
           </div>
-          <div>
+          <div className='relative'>
             <img className='h-64 pl-24' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
+            <img className='h-32 absolute top-24 right-14' src={require('../assets/QR-Code.png')} alt="" />
           </div>
         </div>
       </div>
