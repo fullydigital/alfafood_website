@@ -7,6 +7,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import CarrerPage from './pages/CarrerPage';
+import FranchisePage from './pages/FranchisePage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/location' element={<LocationPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/carrer' element={<CarrerPage />} />
+        <Route path='/franchise' element={<FranchisePage />} />
       </Routes>
       <Footer />
     </div>

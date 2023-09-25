@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MobileNav, Typography, Button, IconButton } from '@material-tailwind/react';
+import { MobileNav, Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
@@ -134,14 +134,14 @@ export default function Navigation() {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
           <Button variant="gradient" size="sm" fullWidth className="mb-2">
             <span>Login</span>
           </Button>
         </div>
-      </MobileNav>
+      </Collapse>
     </div>
   )
 }

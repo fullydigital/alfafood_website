@@ -41,7 +41,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              License
+              Impressum
             </Typography>
           </li>
           <li>
@@ -51,7 +51,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Contribute
+              AGBs
             </Typography>
           </li>
           <li>
@@ -61,7 +61,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Contact Us
+              Kontaktiere uns
             </Typography>
           </li>
         </ul>
