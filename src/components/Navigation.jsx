@@ -35,7 +35,7 @@ export default function Navigation() {
           Filialen
         </NavLink>
       </Typography>
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="white"
@@ -44,7 +44,7 @@ export default function Navigation() {
         <a href="offers" className="flex items-center">
           Angebote
         </a>
-      </Typography>
+      </Typography> */}
       <Typography
         as="li"
         variant="small"
