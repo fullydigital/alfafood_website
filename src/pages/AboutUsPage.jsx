@@ -22,13 +22,13 @@ export default function AboutUsPage() {
       {/* divider start */}
       <div className='flex flex-row bg-black text-white mb-20 items-center'>
         <div className='basis-1/3'>
-          <img className='h-40 -mt-8 ml-80' src={require('../assets/Alfafood Tomate.png')} alt="Markentomate" />
+          <img className='h-40 -mt-8 ml-80' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
         </div>
         <div className='basis-1/3 text-4xl'>
           <h3>Lerne Alfafood kennen!</h3>
         </div>
         <div className='basis-1/3'>
-          <img className='h-40 -mt-8' src={require('../assets/Alfafood Tomate.png')} alt="Markentomate" />
+          <img className='h-40 -mt-8' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
         </div>
       </div>
       {/* divider end */}

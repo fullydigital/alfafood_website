@@ -1,6 +1,14 @@
 import React from 'react'
 
 export default function LocationPage() {
+  const images = [
+    require('../assets/aboutHero.jpg'),
+    require('../assets/aboutUsImage.jpg'),
+    require('../assets/aboutHero.jpg'),
+    require('../assets/aboutUsImage.jpg'),
+    require('../assets/aboutHero.jpg'),
+  ]
+
   return (
     <>
       {/* start hero */}
@@ -51,13 +59,42 @@ export default function LocationPage() {
       </div>
       {/* end google maps */}
       {/* start offers */}
-      <div className=''>
-        <h3>Erhalte Angebote aus deiner Filiale</h3>
-        <p>Melde dich über den QR-Code zu unserem WhatsApp Newsletter an um kein Angebot mehr zu verpassen</p>
-        <button>Per Email anmelden</button>
+      <div className='h-72 w-full'>
+        <div className='flex flex-row w-5/6 mx-auto'>
+          <div className='basis-2/3 text-left pl-20 pt-10'>
+            <h3 className='text-red-700 text-4xl font-semibold'>Erhalte Angebote aus deiner Filiale</h3>
+            <p className='w-9/12 mt-6'>Melde dich über den QR-Code zu unserem WhatsApp Newsletter an um kein Angebot mehr zu verpassen</p>
+            <button className='bg-green-700 text-white pr-16 pl-6 py-3 mt-8 text-left'>Per Email anmelden</button>
+          </div>
+          <div>
+            <img className='h-64 pl-24' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
+          </div>
+        </div>
       </div>
       {/* end offers */}
       {/* start gallery */}
+      <div className='w-full bg-black py-24'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-4 w-5/6 mx-auto'>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
+          </div>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
+          </div>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
+          </div>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
+          </div>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
+          </div>
+          <div>
+            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
+          </div>
+        </div>
+      </div>
       {/* end gallery */}
     </>
   )
