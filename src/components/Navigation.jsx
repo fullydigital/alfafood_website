@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MobileNav, Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
+import { Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
@@ -91,7 +91,7 @@ export default function Navigation() {
   return (
     <div className="mx-auto min-w-screen py-2 px-4 lg:px-8 lg:py-4 bg-black z-10 relative">
       <div className="container mx-auto flex items-center justify-between text-white">
-        <img src={logo} alt="Alfafood Logo" className='h-10' />
+        <NavLink to="/"><img src={logo} alt="Alfafood Logo" className='h-10' /></NavLink>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block">
           <span>Login</span>

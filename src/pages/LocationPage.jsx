@@ -1,14 +1,6 @@
 import React from 'react'
 
 export default function LocationPage() {
-  const images = [
-    require('../assets/aboutHero.jpg'),
-    require('../assets/aboutUsImage.jpg'),
-    require('../assets/aboutHero.jpg'),
-    require('../assets/aboutUsImage.jpg'),
-    require('../assets/aboutHero.jpg'),
-  ]
-
   return (
     <>
       {/* start hero */}
@@ -48,14 +40,14 @@ export default function LocationPage() {
         >
         </iframe>
         <br />
-        <small>
+        {/* <small>
           <a
             href="https://maps.google.com/maps?q='+data.lat+','+data.lon+'&hl=es;z=14&amp;output=embed"
             target="_blank"
           >
             See map bigger
           </a>
-        </small>
+        </small> */}
       </div>
       {/* end google maps */}
       {/* start offers */}
