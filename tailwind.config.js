@@ -10,6 +10,7 @@ module.exports = withMT({
     extend: {
       spacing: {
         '200': '400px',
+        '250': '500px',
         '300': '600px',
         '400': '800px'
       },
