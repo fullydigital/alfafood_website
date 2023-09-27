@@ -9,6 +9,7 @@ module.exports = withMT({
   theme: {
     extend: {
       spacing: {
+        '100': '300px',
         '200': '400px',
         '250': '500px',
         '300': '600px',
