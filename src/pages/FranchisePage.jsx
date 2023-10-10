@@ -54,6 +54,12 @@ export default function FranchisePage() {
           <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nachricht senden</button>
         </form>
       </div>
+      <div className='w-full bg-black text-white h-auto'>
+        <div className='text-6xl text-left lg:text-center mx-auto w-1/2 py-10 uppercase flex flex-col font-bold justify-center leading-17'>
+          <h3 className='mb-4'>Dein eigene Alfafood Filiale.</h3>
+          <h3>Dein mega <span className='underline decoration-red-700'>Erfolg</span>.</h3>
+        </div>
+      </div>
     </section>
   )
 }
