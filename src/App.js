@@ -21,7 +21,7 @@ function App() {
         <Route path='/about' element={<AboutUsPage />} />
         <Route path='/location' element={<LocationPage />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/carrer' element={<CarrerPage />} />
+        <Route path='/career' element={<CarrerPage />} />
         <Route path='/franchise' element={<FranchisePage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route element={<PrivateRoute />}>

@@ -61,7 +61,7 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="carrer" className="flex items-center">
+        <a href="career" className="flex items-center">
           Karriere
         </a>
       </Typography>
