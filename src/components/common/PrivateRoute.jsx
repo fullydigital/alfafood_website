@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
