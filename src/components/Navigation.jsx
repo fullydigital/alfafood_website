@@ -93,9 +93,11 @@ export default function Navigation() {
       <div className="container mx-auto flex items-center justify-between text-white">
         <NavLink to="/"><img src={logo} alt="Alfafood Logo" className='h-10' /></NavLink>
         <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Login</span>
-        </Button>
+        <NavLink to="/login">
+          <Button variant="gradient" size="sm" className="hidden lg:inline-block">
+            <span>Login</span>
+          </Button>
+        </NavLink>
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -137,9 +139,11 @@ export default function Navigation() {
       <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Login</span>
-          </Button>
+          <NavLink to="/login">
+            <Button variant="gradient" size="sm" fullWidth className="mb-2">
+              <span>Login</span>
+            </Button>
+          </NavLink>
         </div>
       </Collapse>
     </div>

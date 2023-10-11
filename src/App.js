@@ -8,6 +8,9 @@ import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import CarrerPage from './pages/CarrerPage';
 import FranchisePage from './pages/FranchisePage';
+import PrivateRoute from './components/common/PrivateRoute';
+import FranchiseHomePage from './pages/Franchise/FranchiseHomePage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/carrer' element={<CarrerPage />} />
         <Route path='/franchise' element={<FranchisePage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/franchiseMember" element={<FranchiseHomePage />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

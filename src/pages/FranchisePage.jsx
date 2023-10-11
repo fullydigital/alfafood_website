@@ -55,7 +55,7 @@ export default function FranchisePage() {
         </form>
       </div>
       <div className='w-full bg-black text-white h-auto'>
-        <div className='text-6xl text-left lg:text-center mx-auto w-1/2 py-10 uppercase flex flex-col font-bold justify-center leading-17'>
+        <div className='md:text-6xl text-left lg:text-center mx-auto text-5xl w-3/4 md:w-1/2 py-10 uppercase flex flex-col font-bold justify-center leading-17 break-normal decoration-8'>
           <h3 className='mb-4'>Dein eigene Alfafood Filiale.</h3>
           <h3>Dein mega <span className='underline decoration-red-700'>Erfolg</span>.</h3>
         </div>
