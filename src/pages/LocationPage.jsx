@@ -3,91 +3,63 @@ import React from 'react'
 export default function LocationPage() {
   return (
     <>
-      {/* start hero */}
-      <div className='flex flex-col-reverse mb-12 lg:mb-0 lg:flex-row w-full'>
-        <div className='flex flex-col basis-1/2 text-left ml-16 lg:pl-20 pt-12 lg:pt-16'>
-          <h2 className='text-red-700 font-semibold text-5xl mb-8'>Nürnberg</h2>
-          <p className='mb-2'><span className='font-semibold'>Straße:</span> Platenstraße 65</p>
-          <p className='mb-2'><span className='font-semibold'>Postleitzahl:</span> 90441 Nürnberg</p>
-          <p className='mb-2'><span className='font-semibold'>Bundesland:</span> Deutschland, Bayern</p>
-          <p className='mb-2'><span className='font-semibold'>Telefon:</span> 0911 9401970</p>
-          <p className='mb-2'><span className='font-semibold'>E-Mail:</span> info@alfafood.eu</p>
-        </div>
-        <div className='basis-1/2'>
-          <img src={require('../assets/aboutHero.jpg')} alt="Filiale" />
-        </div>
+      <div className='h-96 w-full bg-blue-700' />
+      <div className='bg-gray-400 pt-4 pb-8 pl-8 mb-8 lg:mb-20'>
+        <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-semibold'>Nürnberg</span></h2>
       </div>
-      {/* end hero */}
-      {/* start opening */}
-      <div className='h-72 bg-black text-white'>
-        <h3 className='mx-auto w-5/6 text-3xl pt-10'>An folgenden Tagen haben wir geöffnet</h3>
-        <div>
+      <div className='flex flex-col w-10/12 mx-auto lg:flex-row'>
+        <div className='mb-10 lg:basis-4/6 lg:mb-24'>
+          <img className='lg:h-200 xl:h-300' src={require('../assets/aboutUsImage.jpg')} alt="" />
+          <div className='text-left mt-8 mb-10'>
+            <h2 className='text-4xl text-green-700 mb-8'>Alfafood Filiale Nürnberg</h2>
+            <p className='leading-7'>Frische Vielfalt bei "Grün & Gesund": Unsere Neue Gemüsefiliale
 
-        </div>
-      </div>
-      {/* end opening */}
-      {/* start google maps */}
-      <div>
-        <iframe
-          className='w-full h-100'
-          title='location map'
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.204850429205!2d11.067036576391635!3d49.42394107141442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f573cff7c44bf%3A0xf1f62eb18da2a5ed!2sPlatenstra%C3%9Fe%2065%2C%2090441%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1695643780416!5m2!1sde!2sde"
-        >
-        </iframe>
-        <br />
-        {/* <small>
-          <a
-            href="https://maps.google.com/maps?q='+data.lat+','+data.lon+'&hl=es;z=14&amp;output=embed"
-            target="_blank"
+              Wir freuen uns, Ihnen mitteilen zu dürfen, dass "Grün & Gesund" stolz eine brandneue Gemüsefiliale eröffnet hat, die Ihnen die frischesten und schmackhaftesten Gemüsesorten der Region bietet. Mit einer Leidenschaft für gesunde Ernährung und Nachhaltigkeit sind wir bereit, Ihre Einkaufserfahrung auf ein neues Level zu heben.
+
+              Unsere neue Gemüsefiliale ist eine Oase der Frische, die mit lebendigen Farben und verlockenden Düften gefüllt ist. Hier finden Sie ein umfangreiches Sortiment an saisonalen und exotischen Gemüsesorten, um Ihre kulinarischen Kreationen zu bereichern. Von knusprigen Salaten und vitaminreichen Blattgemüsen bis hin zu aromatischen Kräutern und exquisiten Wurzelgemüsen – bei uns gibt es alles.
+
+              Was macht "Grün & Gesund" einzigartig?
+
+              Frisch vom Bauernhof: Unser Gemüse stammt von lokalen Bauern und ausgewählten Lieferanten, die hohe Qualitätsstandards und umweltfreundliche Anbaumethoden gewährleisten. Sie können sicher sein, dass Sie die besten Produkte aus der Region erhalten.
+
+              Saisonale Vielfalt: Wir setzen auf die Schönheit der Jahreszeiten und bieten Ihnen frische Gemüsesorten, die zu jeder Zeit des Jahres verfügbar sind. Genießen Sie Abwechslung und Geschmack in Ihrem Speiseplan.
+
+              Nachhaltigkeit: Wir legen großen Wert auf Nachhaltigkeit. Unsere Filiale verwendet umweltfreundliche Verpackungen und bemüht sich aktiv um Abfallreduzierung. Unsere Partnerschaften mit Bio-Anbauern fördern den schonenden Umgang mit der Natur.
+
+            </p>
+          </div>
+          <iframe
+            className='w-full h-100 md:h-200'
+            title='location map'
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.204850429205!2d11.067036576391635!3d49.42394107141442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f573cff7c44bf%3A0xf1f62eb18da2a5ed!2sPlatenstra%C3%9Fe%2065%2C%2090441%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1695643780416!5m2!1sde!2sde"
           >
-            See map bigger
-          </a>
-        </small> */}
-      </div>
-      {/* end google maps */}
-      {/* start offers */}
-      <div className='h-72 w-full mb-96'>
-        <div className='flex flex-col lg:flex-row w-9/12 lg:w-5/6 mx-auto'>
-          <div className='basis-2/3 text-left lg:pl-20 pt-10'>
-            <h3 className='text-red-700 text-4xl font-semibold'>Erhalte Angebote aus deiner Filiale</h3>
-            <p className='lg:w-9/12 mt-6'>Melde dich über den QR-Code zu unserem WhatsApp Newsletter an um kein Angebot mehr zu verpassen</p>
-            <button className='bg-green-700 text-white pr-16 pl-6 py-3 mt-8 text-left'>Per Email anmelden</button>
+          </iframe>
+        </div>
+        <div className='flex flex-col lg:basis-2/6 lg:pl-12'>
+          <div className='bg-gray-400 pt-8 pb-12 bg-opacity-60 mb-14'>
+            <div className='bg-gray-400 w-10 h-10 rounded-full mx-auto mb-4'></div>
+            <h3 className='font-bold text-white mb-6 text-xl uppercase'>Adresse</h3>
+            <p className='mb-2'>Platenstraße 65</p>
+            <p>90441 Nürnberg</p>
           </div>
-          <div className='relative'>
-            <img className='h-64 mx-auto mt-16 lg:pl-24' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
-            <img className='h-32 absolute top-1/2 right-24 md:right-60 lg:top-1/3 lg:right-14' src={require('../assets/QR-Code.png')} alt="" />
+          <div className='bg-gray-400 py-10 bg-opacity-60 mb-14'>
+            <div className='bg-gray-400 w-10 h-10 rounded-full mx-auto mb-4'></div>
+            <h3 className='font-bold text-white mb-6 text-xl uppercase'>Telefon</h3>
+            <p className='mb-2'>Platenstraße 65</p>
+            <p>0151 - 61726482</p>
+          </div>
+          <div className='bg-gray-400 py-10 bg-opacity-60 mb-20'>
+            <div className='bg-gray-400 w-10 h-10 rounded-full mx-auto mb-4'></div>
+            <h3 className='font-bold text-white mb-6 text-xl uppercase'>Öffnungszeiten</h3>
+            <p className='mb-2'>Mo.-Fr.: 11.00 - 23.00 Uhr</p>
+            <p>Sa. & So.: 10.00 - 23.00 Uhr</p>
           </div>
         </div>
       </div>
-      {/* end offers */}
-      {/* start gallery */}
-      <div className='w-full bg-black py-24'>
-        <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-4 w-5/6 mx-auto'>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
-          </div>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
-          </div>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
-          </div>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
-          </div>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutHero.jpg')} alt="" />
-          </div>
-          <div>
-            <img className='h-auto max-w-full' src={require('../assets/aboutUsImage.jpg')} alt="" />
-          </div>
-        </div>
-      </div>
-      {/* end gallery */}
     </>
   )
 }
