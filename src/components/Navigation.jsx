@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
+import locations from '../data/locations';
 
 export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
+  const [openLocations, setOpenLocations] = useState(false);
   const logo = require('../assets/Alfafood_logo_white.png');
 
   useEffect(() => {
@@ -25,26 +27,24 @@ export default function Navigation() {
           Home
         </NavLink>
       </Typography>
+
+
+
       <Typography
         as="li"
         variant="small"
         color="white"
         className="p-1 font-normal"
       >
-        <NavLink to="location" className="flex items-center">
+        {/* <NavLink to="location" className="flex items-center">
           Filialen
-        </NavLink>
+        </NavLink> */}
+        <p className='flex items-center cursor-pointer' onClick={() => setOpenLocations(!openLocations)}>Filialen</p>
       </Typography>
-      {/* <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-normal"
-      >
-        <a href="offers" className="flex items-center">
-          Angebote
-        </a>
-      </Typography> */}
+
+
+
+
       <Typography
         as="li"
         variant="small"
@@ -61,9 +61,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="career" className="flex items-center">
+        <NavLink to="career" className="flex items-center">
           Karriere
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -71,9 +71,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="franchise" className="flex items-center">
+        <NavLink to="franchise" className="flex items-center">
           Franchise
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -81,9 +81,9 @@ export default function Navigation() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="contact" className="flex items-center">
+        <NavLink to="contact" className="flex items-center">
           Kontakt
-        </a>
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -144,6 +144,11 @@ export default function Navigation() {
               <span>Login</span>
             </Button>
           </NavLink>
+        </div>
+      </Collapse>
+      <Collapse open={openLocations}>
+        <div className="container mx-auto">
+          {navList}
         </div>
       </Collapse>
     </div>
