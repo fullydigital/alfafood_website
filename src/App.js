@@ -11,6 +11,7 @@ import FranchisePage from './pages/FranchisePage';
 import PrivateRoute from './components/common/PrivateRoute';
 import FranchiseHomePage from './pages/Franchise/FranchiseHomePage';
 import LoginPage from './pages/LoginPage';
+import locations from './data/locations';
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
       <Routes>
         <Route path='/' exact element={<HomePage />} />
         <Route path='/about' element={<AboutUsPage />} />
-        <Route path='/location' element={<LocationPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/career' element={<CarrerPage />} />
         <Route path='/franchise' element={<FranchisePage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/location/:id' element={<LocationPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
         </Route>

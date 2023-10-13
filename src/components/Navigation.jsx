@@ -39,8 +39,25 @@ export default function Navigation() {
         {/* <NavLink to="location" className="flex items-center">
           Filialen
         </NavLink> */}
-        <p className='flex items-center cursor-pointer' onClick={() => setOpenLocations(!openLocations)}>Filialen</p>
+        <p className='items-center cursor-pointer text-left' onClick={() => setOpenLocations(!openLocations)}>Filialen</p>
+        <div className={openLocations ? 'relative' : 'collapse'}>
+          <Collapse className='container lg:absolute lg:top-4 lg:left-0 w-36 lg:pb-6 lg:bg-gray-800' open={openLocations}>
+            <div className="flex flex-col text-left mt-2 leading-7 ml-4">
+              {
+                locations.map((location) => {
+                  return (
+                    <>
+                    <NavLink to={`/location/${location.name}`} onClick={() => setOpenLocations(false)}>{location.name}</NavLink>
+                      <section className='h-[1px] w-24 bg-white' />
+                    </>
+                  )
+                })
+              }
+            </div>
+          </Collapse>
+        </div>
       </Typography>
+
 
 
 
@@ -102,7 +119,8 @@ export default function Navigation() {
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
-          onClick={() => setOpenNav(!openNav)}
+          onClick={() => { setOpenNav(!openNav); setOpenLocations(false) }}
+
         >
           {openNav ? (
             <svg
@@ -144,11 +162,6 @@ export default function Navigation() {
               <span>Login</span>
             </Button>
           </NavLink>
-        </div>
-      </Collapse>
-      <Collapse open={openLocations}>
-        <div className="container mx-auto">
-          {navList}
         </div>
       </Collapse>
     </div>

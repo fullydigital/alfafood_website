@@ -1,13 +1,23 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Carousel } from 'flowbite-react';
 import background from '../assets/aboutUsImage.jpg';
+import {useParams} from "react-router-dom";
+import locations from '../data/locations';
 
 export default function LocationPage() {
+  const [ort, setOrt] = useState({});
+  let { id } = useParams();
+
+  useEffect(() => {
+    const ort = locations.find((item) => item.name === id);
+    setOrt(ort);
+  }, [id]);
+
   return (
     <>
       <div className='h-96 w-full bg-cover' style={{ backgroundImage: `url(${background})` }} />
       <div className='bg-gray-400 pt-4 pb-8 pl-8 mb-8 lg:mb-20'>
-        <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-semibold'>Nürnberg</span></h2>
+        <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-semibold'>{ort.name}</span></h2>
       </div>
       <div className='flex flex-col w-10/12 mx-auto lg:flex-row'>
         <div className='mb-10 lg:basis-4/6 lg:mb-24'>
@@ -17,7 +27,7 @@ export default function LocationPage() {
             <img src={require('../assets/heroImage.jpg')} alt="" />
           </Carousel>
           <div className='text-left mt-8 mb-10'>
-            <h2 className='text-4xl text-green-700 mb-8'>Alfafood Filiale Nürnberg</h2>
+            <h2 className='text-4xl text-green-700 mb-8'>Alfafood Filiale {ort.name}</h2>
             <p className='leading-7'>Frische Vielfalt bei "Grün & Gesund": Unsere Neue Gemüsefiliale
 
               Wir freuen uns, Ihnen mitteilen zu dürfen, dass "Grün & Gesund" stolz eine brandneue Gemüsefiliale eröffnet hat, die Ihnen die frischesten und schmackhaftesten Gemüsesorten der Region bietet. Mit einer Leidenschaft für gesunde Ernährung und Nachhaltigkeit sind wir bereit, Ihre Einkaufserfahrung auf ein neues Level zu heben.
@@ -51,16 +61,15 @@ export default function LocationPage() {
               <img src={require('../assets/adress_icon.png')} className='h-8 w-8 mx-auto' alt="" />
             </div>
             <h3 className='font-bold text-white mb-6 text-xl uppercase'>Adresse</h3>
-            <p className='mb-2'>Platenstraße 65</p>
-            <p>90441 Nürnberg</p>
+            <p className='mb-2'>{ort.street}</p>
+            <p>{ort.local}</p>
           </div>
           <div className='bg-gray-400 py-10 bg-opacity-60 mb-14'>
             <div className='bg-gray-400 w-10 h-10 rounded-full mx-auto mb-4 pt-1'>
               <img src={require('../assets/phone.png')} className='h-8 w-8 mx-auto' alt="" />
             </div>
             <h3 className='font-bold text-white mb-6 text-xl uppercase'>Telefon</h3>
-            <p className='mb-2'>Platenstraße 65</p>
-            <p>0151 - 61726482</p>
+            <p>{ort.number}</p>
           </div>
           <div className='bg-gray-400 py-10 bg-opacity-60 mb-20'>
             <div className='bg-gray-400 w-10 h-10 rounded-full mx-auto mb-4 pt-1'>

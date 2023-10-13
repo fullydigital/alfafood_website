@@ -23,7 +23,7 @@ export default function Hero() {
           </div>
         </div>
         <div className='bg-green-700 lg:basis-1/2'>
-          <div className='flex flex-col text-white w-4/5 mx-auto text-xl font-semibold mt-4 pb-10'>
+          <div className='flex flex-col text-white lg:mt-10 w-4/5 mx-auto text-xl font-semibold mt-4 pb-10'>
             <p>1. Mit dem Handy QR-Code scannen.</p>
             <p className='mb-6'>2. Nachricht "Senden".</p>
             <img src={require('../../assets/QR-Code.png')} className='h-32 w-32 mx-auto' alt="" />

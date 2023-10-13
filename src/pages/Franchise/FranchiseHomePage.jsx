@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
 import { content } from './FranchiseData';
+import background from '../../assets/aboutUsImage.jpg';
 
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
@@ -14,7 +15,7 @@ export default function FranchiseHomePage() {
 
   return (
     <div>
-      <div className="w-full h-72 text-white flex bg-black">
+      <div className="w-full h-72 text-white flex bg-cover" style={{ backgroundImage: `url(${background})` }}>
         <h1 className='text-6xl font-semibold mx-auto my-auto'>Alfafood Franchise</h1>
       </div>
       <div className='w-3/4 mx-auto mt-12 mb-20'>
