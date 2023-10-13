@@ -11,7 +11,6 @@ import FranchisePage from './pages/FranchisePage';
 import PrivateRoute from './components/common/PrivateRoute';
 import FranchiseHomePage from './pages/Franchise/FranchiseHomePage';
 import LoginPage from './pages/LoginPage';
-import locations from './data/locations';
 
 function App() {
   return (
