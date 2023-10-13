@@ -22,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-visibility-sensor": "^5.1.1",
     "rsuite": "^5.40.0",
+    "swiper": "^10.3.1",
     "tw-elements-react": "^1.0.0-alpha1",
     "web-vitals": "^2.1.4"
   },

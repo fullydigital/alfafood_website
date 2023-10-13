@@ -15,7 +15,13 @@ export default function AboutUsPage() {
         </div>
         <div className='basis-5/6 w-5/6 lg:w-full flex flex-col items-start mx-auto align-middle mb-12 lg:mb-0 2xl:my-auto'>
           <h3 className='text-4xl text-left mx-auto lg:mx-0 font-semibold mb-8'>Familie Burcak</h3>
-          <p className='text-left mx-auto lg:mr-20 leading-7'>Die Smith-Familie ist ein beeindruckendes Beispiel für eine eng verbundene Familie, die erfolgreich ein florierendes Unternehmen leitet. Das Familienunternehmen, das sie führen, ist SmithTech Solutions, ein renommiertes Unternehmen in der Informationstechnologiebranche. Die Smiths haben nicht nur eine starke familiäre Bindung, sondern auch eine gemeinsame Leidenschaft für Innovation und Technologie.</p>
+          <p className='text-left mx-auto lg:mr-20 leading-7'>Die Alfafood GmbH – ein regionales Familienunternehmen für Food & Non-Food-Produkte
+
+            1997 eröffneten wir unsere Hauptfiliale in Nürnberg – im Laufe der letzten Jahre vergrößerten wir unsere Marktpräsenz durch zwei weitere Standorte in Regensburg und Frankfurt anschließend wurde eine Filiale in München eröffnet und seit 2019 haben wir unsere neue Filiale in Augsburg eröffnet.
+
+            Anfangs noch konzentrierte sich unser Sortiment auf Verpackungsmaterialien für die Gastronomie, später jedoch erweiterten wir dieses um verschiedenste Lebensmittel von Softdrinks über Teigwaren, Fleisch- & Käsevariationen bis hin zu verschiedensten Tiefkühlprodukten – sowohl im Rohzustand oder auch als Fertigprodukt.
+
+            Nicht nur die Qualität der Lebensmittel, sondern auch die Zufriedenheit unserer Kunden, steht bei uns im Mittelpunkt, daher heißt sie unser dynamisches, freundliches Team in allen Standorten herzlich willkommen und ist bereit Ihnen bei jeglichen Fragen rund um unsere Produkte weiterzuhelfen.</p>
         </div>
       </div>
       {/* About Family end */}
