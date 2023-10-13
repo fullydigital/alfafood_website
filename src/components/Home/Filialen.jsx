@@ -19,6 +19,7 @@ export default function Filialen() {
         className='w-full'
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
+        loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         onAutoplayStart={2000}
         breakpoints={{
