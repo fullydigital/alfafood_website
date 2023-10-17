@@ -16,6 +16,9 @@ export default function HomePage() {
       items {
         headline
         text
+        image {
+          url
+        }
       }
     }
     locationHomeTextCollection {

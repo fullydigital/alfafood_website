@@ -3,7 +3,7 @@ import { Typography, Button, IconButton, Collapse } from '@material-tailwind/rea
 import { NavLink } from 'react-router-dom';
 import locations from '../data/locations';
 
-export default function Navigation() {
+export default function Navigation({data}) {
   const [openNav, setOpenNav] = useState(false);
   const [openLocations, setOpenLocations] = useState(false);
   const logo = require('../assets/Alfafood_logo_white.png');
@@ -36,15 +36,12 @@ export default function Navigation() {
         color="white"
         className="p-1 font-semibold"
       >
-        {/* <NavLink to="location" className="flex items-center">
-          Filialen
-        </NavLink> */}
         <p className='items-center cursor-pointer text-left' onClick={() => setOpenLocations(!openLocations)}>Filialen</p>
         <div className={openLocations ? 'relative' : 'collapse'}>
           <Collapse className='container lg:absolute lg:top-4 lg:left-0 w-36 lg:pb-6 lg:bg-gray-800' open={openLocations}>
             <div className="flex flex-col text-left mt-2 leading-7 ml-4">
               {
-                locations.map((location) => {
+                data.map((location) => {
                   return (
                     <>
                     <NavLink to={`/location/${location.name}`} onClick={() => setOpenLocations(false)}>{location.name}</NavLink>

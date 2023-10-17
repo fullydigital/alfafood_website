@@ -1,24 +1,41 @@
 import React from 'react';
 import Select from 'react-select';
-import locations from "../data/locations";
+import {BLOCKS, MARKS} from '@contentful/rich-text-types';
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
-export default function CarrerPage() {
 
-        const options = [
+const Bold = ({ children }) => <span className="font-bold">{children}</span>;
+
+const Text = ({ children }) => <p className="mb-6">{children}</p>;
+
+const options = {
+        renderMark: {
+                [MARKS.BOLD]: (text) => <Bold>{text}</Bold>
+        },
+        renderNode: {
+                [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>
+        }
+};
+
+export default function CarrerPage({ data, locations }) {
+
+        const optionss = [
                 { value: 'nueremberg', label: 'Verkäufer' },
                 { value: 'augsburg', label: 'Kaufmann/-frau im Großhandel' },
                 { value: 'ingolstadt', label: 'Fachlagerist' }
         ]
 
-        const filialen = locations.map((filiale) => ({ value: filiale.id, label: filiale.name }))
+        const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
+
+        console.log(filialen);
 
         return (
                 <div className="w-10/12 lg:w-11/12 mx-auto flex flex-col lg:flex-row lg:justify-center">
                         <div className="lg:basis-1/2 xl:basis-1/3 my-8 lg:my-16 text-left lg:pr-10">
-                                <h2 className="text-3xl font-bold mb-6">WIR SUCHEN DICH</h2>
-                                <h3 className="text-xl mb-10 font-semibold">FÜR DIE KÜCHE. FÜR DEN SERVICE. UND VIELLEICHT NOCH MEHR!</h3>
-
-                                <p className="mb-6">Bist Du bona’me? Oder einfach Du selbst? Dann genau brauchen wir Dich als #Gastgeber #Glücklichmacher #Mezzestar #Supershaker. Wir wachsen und sind immer auf der Suche nach Talenten und neuen Familienmitgliedern in den Bereichen Service, Küche und Bar.</p>
+                                <h2 className="text-3xl font-bold mb-6 uppercase">{data.headline}</h2>
+                                <h3 className="text-xl mb-10 font-semibold uppercase">{data.subline}</h3>
+                                {documentToReactComponents(data.text.json, options)}
+                                {/* <p className="mb-6">Bist Du bona’me? Oder einfach Du selbst? Dann genau brauchen wir Dich als #Gastgeber #Glücklichmacher #Mezzestar #Supershaker. Wir wachsen und sind immer auf der Suche nach Talenten und neuen Familienmitgliedern in den Bereichen Service, Küche und Bar.</p>
 
                                 <p className="mb-6 font-semibold">Was uns am Herzen liegt</p>
 
@@ -28,7 +45,7 @@ export default function CarrerPage() {
 
                                 <p className="mb-6">Neben den selbstverständlichen Goodies vor allem ein Umfeld mit Kreativität und Potential. Wir verändern uns gerne, lernen, schmieden Pläne und haben dabei viel Spaß. Wir sind ein Unternehmen, das sich dynamisch entwickelt, es stehen Dir also viele Türen offen. Mit der Vision von „unserem Haus“ haben wir Großes vor. Sei auch Du ein Teil dieser Vision und lass‘ uns gemeinsam Deinen Platz in unserer Familie finden.</p>
 
-                                <p>Nutze einfach das Kontaktformular und sende uns deine Daten zu, wir melden uns schnellstmöglich.</p>
+                                <p>Nutze einfach das Kontaktformular und sende uns deine Daten zu, wir melden uns schnellstmöglich.</p> */}
                         </div>
                         <div className="xl:basis-1/2">
                                 <section class="bg-gray-200 dark:bg-gray-900 mb-10 mt-8 lg:mt-16">
@@ -53,7 +70,7 @@ export default function CarrerPage() {
                                                         </div>
                                                         <div>
                                                                 <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Stelle</label>
-                                                                <Select options={options} id="location" />
+                                                                <Select options={optionss} id="location" />
                                                         </div>
                                                         <div class="sm:col-span-2">
                                                                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Nachricht</label>

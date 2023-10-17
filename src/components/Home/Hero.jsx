@@ -11,25 +11,10 @@ export default function Hero() {
             <button className='bg-gray-700 w-4/6 lg:w-3/5 mb-12 py-3 lg:ml-24 xl:ml-32 2xl:w-2/5 font-semibold'>Filialen entdecken</button>
           </div>
         </div>
-        <div className='collapse lg:visible lg:bg-black lg:basis-3/5 xl:w-full xl:basis-full lg:container'>
-          <img className='rounded-l-200 h-400 -mt-32 relative object-center mx-auto object-cover' src={require('../../assets/heroImage.jpg')} alt="Filialfoto" />
+        <div className='collapse lg:visible bg-black lg:basis-3/5 xl:w-full xl:basis-full lg:container'>
+          <img className='rounded-l-200 h-400 bg-black -mt-32 relative object-center mx-auto object-cover' src={require('../../assets/heroImage.jpg')} alt="Filialfoto" />
         </div>
       </div>
-      {/* <div className='flex flex-col lg:flex-row w-full z-10 relative'>
-        <div className='bg-green-500 text-white lg:basis-1/2 font-semibold text-2xl pb-10'>
-          <div className='w-4/5 mx-auto mt-4 lg:mt-12'>
-            <img src={require('../../assets/whatsapp.png')} className='mx-auto mb-4' alt="" />
-            <h2>Unsere Angebote gibts auch als WhatsApp Newsletter</h2>
-          </div>
-        </div>
-        <div className='bg-green-700 lg:basis-1/2'>
-          <div className='flex flex-col text-white lg:mt-10 w-4/5 mx-auto text-xl font-semibold mt-4 pb-10'>
-            <p>1. Mit dem Handy QR-Code scannen.</p>
-            <p className='mb-6'>2. Nachricht "Senden".</p>
-            <img src={require('../../assets/QR-Code.png')} className='h-32 w-32 mx-auto' alt="" />
-          </div>
-        </div>
-      </div> */}
     </>
   )
 }

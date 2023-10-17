@@ -16,6 +16,8 @@ import OffersPage from "./pages/OffersPage";
 
 function App() {
   const [aboutUs, setAboutUs] = useState(null);
+  const [carrer, setCarrer] = useState(null);
+  const [locations, setLocations] = useState(null);
 
   const query = `
   {
@@ -28,6 +30,30 @@ function App() {
         }
         video {
           url
+        }
+      }
+    }
+    careerCollection {
+      items {
+        headline
+        subline
+        text {
+          json
+        }
+      }
+    }
+    contentTypeLocationCollection {
+      items {
+        name
+        street
+        locationNumber
+        phone
+        maps {
+          lon
+          lat
+        }
+        text {
+          json
         }
       }
     }
@@ -54,6 +80,8 @@ function App() {
 
         // rerender the entire component with new data
         setAboutUs(data.aboutUsCollection.items[0])
+        setCarrer(data.careerCollection.items[0])
+        setLocations(data.contentTypeLocationCollection.items)
       })
   }, [query]);
 
@@ -63,16 +91,16 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation />
+      <Navigation data={locations} />
       <Routes>
         <Route path='/' exact element={<HomePage />} />
         <Route path='/about' element={<AboutUsPage data={aboutUs} />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/career' element={<CarrerPage />} />
+        <Route path='/career' element={<CarrerPage data={carrer} locations={locations} />} />
         <Route path='/franchise' element={<FranchisePage />} />
         <Route path='/offers' element={<OffersPage />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/location/:id' element={<LocationPage />} />
+        <Route path='/location/:id' element={<LocationPage data={locations} />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
         </Route>
