@@ -28,6 +28,8 @@ export default function LocationPage({ data }) {
     setOrt(ort);
   }, [id]);
 
+  console.log(ort);
+
   if(!ort) return <p>Loading...</p>
 
   return (
@@ -54,8 +56,10 @@ export default function LocationPage({ data }) {
             scrolling="no"
             marginHeight="0"
             marginWidth="0"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.204850429205!2d11.067036576391635!3d49.42394107141442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f573cff7c44bf%3A0xf1f62eb18da2a5ed!2sPlatenstra%C3%9Fe%2065%2C%2090441%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1695643780416!5m2!1sde!2sde"
-          >
+            //src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.204850429205!2d11.067036576391635!3d49.42394107141442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f573cff7c44bf%3A0xf1f62eb18da2a5ed!2sPlatenstra%C3%9Fe%2065%2C%2090441%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1695643780416!5m2!1sde!2sde"
+            //src={`https://maps.google.com/maps?q=${ort.maps.lat},${ort.maps.lon}&hl=es;z=14&amp;output=embed`}
+            src={`https://maps.google.com/maps?q=${ort.maps.lat},${ort.maps.lon}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+            >
           </iframe>
         </div>
         <div className='flex flex-col lg:basis-2/6 lg:pl-12'>
