@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 export default function Career() {
   return (
@@ -10,7 +11,7 @@ export default function Career() {
         </div>
         <div className='flex flex-col lg:text-left lg:w-2/3 lg:justify-center'>
           <p className='mb-2 lg:w-3/4 lg:mx-auto'>Ob Bereich Lager, Verkauf oder Buchhaltung - wir freuen uns auf Ihre Bewerbung! Hier geht es zu dem Bewerbungsformular:</p>
-          <button className='bg-red-700 py-3 w-1/2 mx-auto lg:w-3/4 mt-4'>Mehr erfahren!</button>
+          <button className='bg-red-700 py-3 w-1/2 mx-auto lg:w-3/4 mt-4'><NavLink to="/career">Mehr erfahren!</NavLink></button>
         </div>
       </div>
     </div>
