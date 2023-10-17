@@ -52,9 +52,13 @@ export default function Footer() {
         </ul>
       </div>
       <hr className="my-8 border-blue-gray-50" />
-      <Typography color="white" className="text-center font-normal">
+      <div className="flex flex-row justify-center align-middle">
+      <Typography color="white" className="text-center font-normal mr-10">
         &copy; {currentYear} Alfafood GmbH
       </Typography>
+        <a href="https://www.instagram.com/alfafood_gmbh/"><img className="h-10 w-10 mr-2 -mt-1" src={require('../assets/instagram.png')} /></a>
+        <a href="https://www.tiktok.com/@alfafood_gmbh"><img className="h-10 w-10 -mt-1" src={require('../assets/tiktok.png')} /></a>
+    </div>
     </footer>
   )
 }
