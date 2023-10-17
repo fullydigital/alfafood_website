@@ -9,9 +9,9 @@ export default function AboutUsPage() {
       </div>
       {/* Hero End */}
       {/* About Family start */}
-      <div className='flex flex-col-reverse lg:flex-row mt-12 lg:mt-20 mb-20 lg:w-9/12 mx-auto'>
+      <div className='flex flex-col-reverse lg:flex-row mt-12 lg:mt-20 mb-20 lg:w-10/12 xl:w-9/12 mx-auto'>
         <div className='basis-1/2 lg:basis-full my-auto'>
-          <img className='rounded-full object-cover h-80 w-80 mx-auto lg:ml-20' src={require('../assets/family.jpg')} alt="Familie Burcak" />
+          <img className='object-cover h-80 w-80 mx-auto lg:ml-20' src={require('../assets/family.jpg')} alt="Familie Burcak" />
         </div>
         <div className='basis-5/6 w-5/6 lg:w-full flex flex-col items-start mx-auto align-middle mb-12 lg:mb-0 2xl:my-auto'>
           <h3 className='text-4xl text-left mx-auto lg:mx-0 font-semibold mb-8'>Familie Burcak</h3>
@@ -26,7 +26,7 @@ export default function AboutUsPage() {
       </div>
       {/* About Family end */}
       {/* divider start */}
-      <div className='flex flex-col lg:flex-row bg-black text-white mb-20 items-center'>
+      {/* <div className='flex flex-col lg:flex-row bg-black text-white mb-20 items-center'>
         <div className='lg:basis-1/3 lg:flex justify-end h-0 lg:h-full collapse lg:visible'>
           <img className='h-40 -mt-8' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
         </div>
@@ -36,10 +36,10 @@ export default function AboutUsPage() {
         <div className='lg:basis-1/3 flex justify-start h-0 lg:h-full collapse lg:visible'>
           <img className='h-40 -mt-8' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
         </div>
-      </div>
+      </div> */}
       {/* divider end */}
       {/* members start */}
-      <div className='flex flex-col-reverse md:flex-row lg:w-10/12 xl:w-8/12 mx-auto'>
+      {/* <div className='flex flex-col-reverse md:flex-row lg:w-10/12 xl:w-8/12 mx-auto'>
         <div className='flex flex-col basis-3/5 items-start pt-6'>
           <h2 className='text-4xl font-semibold text-green-800 text-left w-5/6 md:w-3/4 mx-auto mb-8'>Roni Burcak</h2>
           <p className='text-left leading-7 mx-auto w-5/6 md:w-3/4'>Der Patriarch der Familie und Gründer von SmithTech Solutions. James ist ein visionärer Unternehmer mit über 30 Jahren Erfahrung in der IT-Branche. Seine Entschlossenheit und sein Geschäftssinn haben das Unternehmen von bescheidenen Anfängen zu einem Global Player in der Branche gemacht. Als Familienvater ist er ein liebevoller Mentor und hat seine Leidenschaft für Technologie an seine Kinder weitergegeben.</p>
@@ -58,8 +58,15 @@ export default function AboutUsPage() {
           <p className='text-left leading-7 w-5/6 mx-auto md:w-3/4'>Der Patriarch der Familie und Gründer von SmithTech Solutions. James ist ein visionärer Unternehmer mit über 30 Jahren Erfahrung in der IT-Branche. Seine Entschlossenheit und sein Geschäftssinn haben das Unternehmen von bescheidenen Anfängen zu einem Global Player in der Branche gemacht. Als Familienvater ist er ein liebevoller Mentor und hat seine Leidenschaft für Technologie an seine Kinder weitergegeben.</p>
         </div>
       </div>
-      <div className='w-full h-2 bg-black mb-20 mt-20'></div>
+      <div className='w-full h-2 bg-black mb-20 mt-20'></div> */}
       {/* members end */}
+      <div className="w-full bg-gray-400 p-12 mb-20">
+        <div className="w-11/12 flex justify-center mx-auto">
+          <video className="w-5/6 lg:h-300" controls>
+            <source src={require('../assets/AboutVideo.mp4')} type="video/mp4" />
+          </video>
+        </div>
+      </div>
     </>
   )
 }

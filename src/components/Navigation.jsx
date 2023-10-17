@@ -21,7 +21,7 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
       >
         <NavLink to="/" className="flex items-center">
           Home
@@ -34,7 +34,7 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
       >
         {/* <NavLink to="location" className="flex items-center">
           Filialen
@@ -66,7 +66,7 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
       >
         <NavLink to="about" className="flex items-center">
           Über uns
@@ -76,7 +76,17 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
+        >
+        <NavLink to="offers" className="flex items-center">
+          Angebote
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="white"
+        className="p-1 font-semibold"
       >
         <NavLink to="career" className="flex items-center">
           Karriere
@@ -86,7 +96,7 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
       >
         <NavLink to="franchise" className="flex items-center">
           Franchise
@@ -96,7 +106,7 @@ export default function Navigation() {
         as="li"
         variant="small"
         color="white"
-        className="p-1 font-normal"
+        className="p-1 font-semibold"
       >
         <NavLink to="contact" className="flex items-center">
           Kontakt

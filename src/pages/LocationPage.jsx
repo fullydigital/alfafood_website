@@ -15,7 +15,7 @@ export default function LocationPage() {
 
   return (
     <>
-      <div className='h-96 w-full bg-cover' style={{ backgroundImage: `url(${background})` }} />
+      <div className='h-300 w-full bg-cover' style={{ backgroundImage: `url(${background})` }} />
       <div className='bg-gray-400 pt-4 pb-8 pl-8 mb-8 lg:mb-20'>
         <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-semibold'>{ort.name}</span></h2>
       </div>

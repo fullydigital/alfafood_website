@@ -15,7 +15,7 @@ export default function Hero() {
           <img className='rounded-l-200 h-400 -mt-32 relative object-center mx-auto object-cover' src={require('../../assets/heroImage.jpg')} alt="Filialfoto" />
         </div>
       </div>
-      <div className='flex flex-col lg:flex-row w-full z-10 relative'>
+      {/* <div className='flex flex-col lg:flex-row w-full z-10 relative'>
         <div className='bg-green-500 text-white lg:basis-1/2 font-semibold text-2xl pb-10'>
           <div className='w-4/5 mx-auto mt-4 lg:mt-12'>
             <img src={require('../../assets/whatsapp.png')} className='mx-auto mb-4' alt="" />
@@ -29,7 +29,7 @@ export default function Hero() {
             <img src={require('../../assets/QR-Code.png')} className='h-32 w-32 mx-auto' alt="" />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
