@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AboutUsPage() {
+export default function AboutUsPage({data}) {
   return (
     <>
       {/* Hero Start */}
@@ -11,10 +11,10 @@ export default function AboutUsPage() {
       {/* About Family start */}
       <div className='flex flex-col-reverse lg:flex-row mt-12 lg:mt-20 mb-20 lg:w-10/12 xl:w-9/12 mx-auto'>
         <div className='basis-1/2 lg:basis-full my-auto'>
-          <img className='object-cover h-80 w-80 mx-auto lg:ml-20' src={require('../assets/family.jpg')} alt="Familie Burcak" />
+          <img className='object-cover h-80 w-80 mx-auto lg:ml-20' src={data.image.url} alt="Familie Burcak" />
         </div>
         <div className='basis-5/6 w-5/6 lg:w-full flex flex-col items-start mx-auto align-middle mb-12 lg:mb-0 2xl:my-auto'>
-          <h3 className='text-4xl text-left mx-auto lg:mx-0 font-semibold mb-8'>Familie Burcak</h3>
+          <h3 className='text-4xl text-left mx-auto lg:mx-0 font-semibold mb-8'>{data.headline ? data.headline : 'Familie Burcak'}</h3>
           <p className='text-left mx-auto lg:mr-20 leading-7'>Die Alfafood GmbH – ein regionales Familienunternehmen für Food & Non-Food-Produkte
 
             1997 eröffneten wir unsere Hauptfiliale in Nürnberg – im Laufe der letzten Jahre vergrößerten wir unsere Marktpräsenz durch zwei weitere Standorte in Regensburg und Frankfurt anschließend wurde eine Filiale in München eröffnet und seit 2019 haben wir unsere neue Filiale in Augsburg eröffnet.
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
       <div className="w-full bg-gray-400 p-12 mb-20">
         <div className="w-11/12 flex justify-center mx-auto">
           <video className="w-5/6 lg:h-300" controls>
-            <source src={require('../assets/AboutVideo.mp4')} type="video/mp4" />
+            <source src={data.video.url} type="video/mp4" />
           </video>
         </div>
       </div>
