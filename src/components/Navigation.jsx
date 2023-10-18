@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
-import locations from '../data/locations';
 
 export default function Navigation({data}) {
   const [openNav, setOpenNav] = useState(false);

@@ -26,7 +26,7 @@ export default function LocationPage({ data }) {
   useEffect(() => {
     const ort = data.find((item) => item.name === id);
     setOrt(ort);
-  }, [id]);
+  }, [id, data]);
 
   console.log(ort);
 
