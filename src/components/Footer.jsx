@@ -56,8 +56,8 @@ export default function Footer() {
       <Typography color="white" className="text-center font-normal mr-10">
         &copy; {currentYear} Alfafood GmbH
       </Typography>
-        <a href="https://www.instagram.com/alfafood_gmbh/"><img className="h-10 w-10 mr-2 -mt-1" src={require('../assets/instagram.png')} /></a>
-        <a href="https://www.tiktok.com/@alfafood_gmbh"><img className="h-10 w-10 -mt-1" src={require('../assets/tiktok.png')} /></a>
+        <a href="https://www.instagram.com/alfafood_gmbh/"><img className="h-10 w-10 mr-2 -mt-1" src={require('../assets/instagram.png')} alt="Instagram Logo" /></a>
+        <a href="https://www.tiktok.com/@alfafood_gmbh"><img className="h-10 w-10 -mt-1" src={require('../assets/tiktok.png')} alt="TikTok Logo" /></a>
     </div>
     </footer>
   )
