@@ -27,8 +27,6 @@ export default function CarrerPage({ data, locations }) {
 
         const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
 
-        console.log(filialen);
-
         return (
                 <div className="w-10/12 lg:w-11/12 mx-auto flex flex-col lg:flex-row lg:justify-center">
                         <div className="lg:basis-1/2 xl:basis-1/3 my-8 lg:my-16 text-left lg:pr-10">

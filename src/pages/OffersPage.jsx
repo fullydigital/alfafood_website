@@ -1,7 +1,13 @@
 import React from 'react'
 import { Carousel } from 'flowbite-react';
+import Select from 'react-select';
 
-export default function OffersPage() {
+export default function OffersPage({locations}) {
+
+  const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
+
+  console.log(filialen);
+
   return (
     <>
       <div className="w-full flex flex-col lg:flex-row">
@@ -27,8 +33,33 @@ export default function OffersPage() {
         <h2 className="text-2xl font-semibold mb-4 lg:text-4xl">Zum Newsletter anmelden</h2>
         <p className="lg:text-xl">Melde dich zu unserem Email Newsletter an um keine Angebote mehr zu verpassen!</p>
       </div>
-      <div className="pb-12">
-        <input type="text" id="subject" class="mb-10 block p-3 mx-auto w-2/3 lg:w-1/3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@mail.com" required />
+      <div className="pb-12 z-10 relative z-20">
+        <div className="flex flex-col w-10/12 lg:flex-row lg:flex-wrap mx-auto">
+          <div className="mb-6 lg:basis-1/3 lg:px-2">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
+            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@mail.com" required />
+          </div>
+          <div className="mb-6 lg:basis-1/3 lg:px-2">
+            <label for="adress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Adresse</label>
+            <input type="text" id="adress" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Straße, Nummer" required />
+          </div>
+          <div className="mb-6 lg:basis-1/3 lg:px-2">
+            <label for="local" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ort</label>
+            <input type="text" id="local" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Postleitzahl, Ort" required />
+          </div>
+          <div className="mb-6 lg:basis-1/3 lg:px-2">
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telefonnummer</label>
+            <input type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Telefonnummer" required />
+          </div>
+          <div className="mb-6 lg:basis-1/3 lg:px-2">
+            <label for="filiale" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Firmenname</label>
+            <input type="text" id="filiale" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Firmenname" required />
+          </div>
+          <div className="flex flex-col pb-14 w-2/3 mx-auto lg:basis-1/3 lg:px-2">
+            <label for="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filiale</label>
+            <Select options={filialen} id="location" />
+          </div>
+        </div>
         <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nachricht senden</button>
       </div>
     </div>
