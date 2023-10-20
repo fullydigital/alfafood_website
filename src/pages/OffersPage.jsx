@@ -6,8 +6,6 @@ export default function OffersPage({locations}) {
 
   const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
 
-  console.log(filialen);
-
   return (
     <>
       <div className="w-full flex flex-col lg:flex-row">
@@ -36,8 +34,8 @@ export default function OffersPage({locations}) {
       <div className="pb-12 z-10 relative z-20">
         <div className="flex flex-col w-10/12 lg:flex-row lg:flex-wrap mx-auto">
           <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
-            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@mail.com" required />
+            <label for="Email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
+            <input type="email" id="Email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@mail.com" required />
           </div>
           <div className="mb-6 lg:basis-1/3 lg:px-2">
             <label for="adress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Adresse</label>
@@ -57,7 +55,7 @@ export default function OffersPage({locations}) {
           </div>
           <div className="flex flex-col pb-14 w-2/3 mx-auto lg:basis-1/3 lg:px-2">
             <label for="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filiale</label>
-            <Select options={filialen} id="location" />
+            <Select options={filialen} id="location"/>
           </div>
         </div>
         <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nachricht senden</button>

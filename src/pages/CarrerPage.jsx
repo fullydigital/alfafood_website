@@ -33,23 +33,12 @@ export default function CarrerPage({ data, locations }) {
                                 <h2 className="text-3xl font-bold mb-6 uppercase">{data.headline}</h2>
                                 <h3 className="text-xl mb-10 font-semibold uppercase">{data.subline}</h3>
                                 {documentToReactComponents(data.text.json, options)}
-                                {/* <p className="mb-6">Bist Du bona’me? Oder einfach Du selbst? Dann genau brauchen wir Dich als #Gastgeber #Glücklichmacher #Mezzestar #Supershaker. Wir wachsen und sind immer auf der Suche nach Talenten und neuen Familienmitgliedern in den Bereichen Service, Küche und Bar.</p>
-
-                                <p className="mb-6 font-semibold">Was uns am Herzen liegt</p>
-
-                                <p className="mb-6">Deine Leidenschaft, Deine Begeisterung und Deine Offenheit. Und dass Du wachsen möchtest, mit uns und über Dich hinaus. Wir wünschen uns keine Perfektionisten, wir suchen Menschen mit Herz und Motivation. Auch Quereinsteiger mit und ohne Gastro-Erfahrung sind herzlich willkommen.</p>
-
-                                <p className="mb-6 font-semibold">Was wir bieten können?</p>
-
-                                <p className="mb-6">Neben den selbstverständlichen Goodies vor allem ein Umfeld mit Kreativität und Potential. Wir verändern uns gerne, lernen, schmieden Pläne und haben dabei viel Spaß. Wir sind ein Unternehmen, das sich dynamisch entwickelt, es stehen Dir also viele Türen offen. Mit der Vision von „unserem Haus“ haben wir Großes vor. Sei auch Du ein Teil dieser Vision und lass‘ uns gemeinsam Deinen Platz in unserer Familie finden.</p>
-
-                                <p>Nutze einfach das Kontaktformular und sende uns deine Daten zu, wir melden uns schnellstmöglich.</p> */}
                         </div>
                         <div className="xl:basis-1/2">
                                 <section class="bg-gray-200 dark:bg-gray-900 mb-10 mt-8 lg:mt-16">
                                         <div class="py-8 lg:py-16 px-4 mx-auto text-left max-w-screen-md">
                                                 <h2 class="mb-4 xl:mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bewerbung</h2>
-                                                <form action="#" class="space-y-8">
+                                                <form action="../formScripts/career_email.php" method="post" class="space-y-8">
                                                         <div>
                                                                 <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vorname</label>
                                                                 <input type="text" id="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Vorname" required />

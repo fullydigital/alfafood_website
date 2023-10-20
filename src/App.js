@@ -13,6 +13,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import FranchiseHomePage from './pages/Franchise/FranchiseHomePage';
 import LoginPage from './pages/LoginPage';
 import OffersPage from "./pages/OffersPage";
+import LocationOverviewPage from './pages/LocationOverviewPage';
 
 function App() {
   const [aboutUs, setAboutUs] = useState(null);
@@ -100,6 +101,7 @@ function App() {
         <Route path='/franchise' element={<FranchisePage />} />
         <Route path='/offers' element={<OffersPage locations={locations} />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/location' element={<LocationOverviewPage locations={locations} />} />
         <Route path='/location/:id' element={<LocationPage data={locations} />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
