@@ -15,51 +15,10 @@ export default function AboutUsPage({data}) {
         </div>
         <div className='basis-5/6 w-5/6 lg:w-full flex flex-col items-start mx-auto align-middle mb-12 lg:mb-0 2xl:my-auto'>
           <h3 className='text-4xl text-left mx-auto lg:mx-0 font-semibold mb-8'>{data.headline ? data.headline : 'Familie Burcak'}</h3>
-          <p className='text-left mx-auto lg:mr-20 leading-7'>Die Alfafood GmbH – ein regionales Familienunternehmen für Food & Non-Food-Produkte
-
-            1997 eröffneten wir unsere Hauptfiliale in Nürnberg – im Laufe der letzten Jahre vergrößerten wir unsere Marktpräsenz durch zwei weitere Standorte in Regensburg und Frankfurt anschließend wurde eine Filiale in München eröffnet und seit 2019 haben wir unsere neue Filiale in Augsburg eröffnet.
-
-            Anfangs noch konzentrierte sich unser Sortiment auf Verpackungsmaterialien für die Gastronomie, später jedoch erweiterten wir dieses um verschiedenste Lebensmittel von Softdrinks über Teigwaren, Fleisch- & Käsevariationen bis hin zu verschiedensten Tiefkühlprodukten – sowohl im Rohzustand oder auch als Fertigprodukt.
-
-            Nicht nur die Qualität der Lebensmittel, sondern auch die Zufriedenheit unserer Kunden, steht bei uns im Mittelpunkt, daher heißt sie unser dynamisches, freundliches Team in allen Standorten herzlich willkommen und ist bereit Ihnen bei jeglichen Fragen rund um unsere Produkte weiterzuhelfen.</p>
+          <p className='text-left mx-auto lg:mr-20 leading-7'>{data.text}</p>
         </div>
       </div>
       {/* About Family end */}
-      {/* divider start */}
-      {/* <div className='flex flex-col lg:flex-row bg-black text-white mb-20 items-center'>
-        <div className='lg:basis-1/3 lg:flex justify-end h-0 lg:h-full collapse lg:visible'>
-          <img className='h-40 -mt-8' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
-        </div>
-        <div className='lg:basis-1/3 mx-auto py-10 lg:py-0 text-3xl md:text-4xl'>
-          <h3 className='mx-auto'>Lerne Alfafood kennen!</h3>
-        </div>
-        <div className='lg:basis-1/3 flex justify-start h-0 lg:h-full collapse lg:visible'>
-          <img className='h-40 -mt-8' src={require('../assets/Alfafood_Tomate.png')} alt="Markentomate" />
-        </div>
-      </div> */}
-      {/* divider end */}
-      {/* members start */}
-      {/* <div className='flex flex-col-reverse md:flex-row lg:w-10/12 xl:w-8/12 mx-auto'>
-        <div className='flex flex-col basis-3/5 items-start pt-6'>
-          <h2 className='text-4xl font-semibold text-green-800 text-left w-5/6 md:w-3/4 mx-auto mb-8'>Roni Burcak</h2>
-          <p className='text-left leading-7 mx-auto w-5/6 md:w-3/4'>Der Patriarch der Familie und Gründer von SmithTech Solutions. James ist ein visionärer Unternehmer mit über 30 Jahren Erfahrung in der IT-Branche. Seine Entschlossenheit und sein Geschäftssinn haben das Unternehmen von bescheidenen Anfängen zu einem Global Player in der Branche gemacht. Als Familienvater ist er ein liebevoller Mentor und hat seine Leidenschaft für Technologie an seine Kinder weitergegeben.</p>
-        </div>
-        <div className='basis-2/5'>
-          <img className='w-60 mx-auto mb-6 lg:mb-0' src={require('../assets/person.jpg')} alt="Roni Burcak" />
-        </div>
-      </div>
-      <div className='w-full h-2 bg-black mb-20 mt-20'></div>
-      <div className='flex flex-col md:flex-row mx-auto lg:w-10/12 xl:w-8/12'>
-        <div className='basis-2/5'>
-          <img className='w-60 mx-auto mb-6 lg:mb-0 lg:ml-20' src={require('../assets/person.jpg')} alt="Roni Burcak" />
-        </div>
-        <div className='flex flex-col basis-3/5 items-start lg:pl-28 pt-6'>
-          <h2 className='text-4xl font-semibold mx-auto w-5/6 md:w-3/4 text-left text-green-800 mb-8'>Roni Burcak</h2>
-          <p className='text-left leading-7 w-5/6 mx-auto md:w-3/4'>Der Patriarch der Familie und Gründer von SmithTech Solutions. James ist ein visionärer Unternehmer mit über 30 Jahren Erfahrung in der IT-Branche. Seine Entschlossenheit und sein Geschäftssinn haben das Unternehmen von bescheidenen Anfängen zu einem Global Player in der Branche gemacht. Als Familienvater ist er ein liebevoller Mentor und hat seine Leidenschaft für Technologie an seine Kinder weitergegeben.</p>
-        </div>
-      </div>
-      <div className='w-full h-2 bg-black mb-20 mt-20'></div> */}
-      {/* members end */}
       <div className="w-full bg-gray-400 p-12 mb-20">
         <div className="w-11/12 flex justify-center mx-auto">
           <video className="w-5/6 lg:h-300" controls>
