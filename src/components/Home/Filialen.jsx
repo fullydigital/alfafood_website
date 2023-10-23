@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import locations from '../../data/locations';
+import {NavLink} from "react-router-dom";
 
 export default function Filialen({data}) {
   return (
@@ -39,12 +40,14 @@ export default function Filialen({data}) {
         {locations.map((location) => {
           return (
             <SwiperSlide>
+              <NavLink to={`/location/${location.name}`}>
               <div className='relative'>
                 <div className='absolute pr-10 py-3 top-5 bg-gray-600 opacity-70'>
                   <p className='text-3xl text-left pl-5 text-white'>{location.name}</p>
                 </div>
                 <img src={require('../../assets/aboutUsImage.jpg')} alt="" />
               </div>
+                </NavLink>
             </SwiperSlide>
           )
         })}
