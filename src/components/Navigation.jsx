@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Typography, Button, IconButton, Collapse } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
 
-export default function Navigation({data}) {
+export default function Navigation({ data }) {
   const [openNav, setOpenNav] = useState(false);
   const [openLocations, setOpenLocations] = useState(false);
   const logo = require('../assets/Alfafood_logo_white.png');
@@ -36,22 +36,6 @@ export default function Navigation({data}) {
         className="p-1 font-semibold"
       >
         <NavLink className="items-center cursor-pointer text-left" to="/location">Standorte</NavLink>
-        {/* <div className={openLocations ? 'relative' : 'collapse'}>
-          <Collapse className='container lg:absolute lg:top-4 lg:left-0 w-36 lg:pb-6 lg:bg-gray-800' open={openLocations}>
-            <div className="flex flex-col text-left mt-2 leading-7 ml-4">
-              {
-                data.map((location) => {
-                  return (
-                    <>
-                    <NavLink to={`/location/${location.name}`} onClick={() => setOpenLocations(false)}>{location.name}</NavLink>
-                      <section className='h-[1px] w-24 bg-white' />
-                    </>
-                  )
-                })
-              }
-            </div>
-          </Collapse>
-        </div> */}
       </Typography>
 
 
@@ -73,7 +57,7 @@ export default function Navigation({data}) {
         variant="small"
         color="white"
         className="p-1 font-semibold"
-        >
+      >
         <NavLink to="offers" className="flex items-center">
           Angebote
         </NavLink>
