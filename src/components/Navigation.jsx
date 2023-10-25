@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navigation({ data }) {
   const [openNav, setOpenNav] = useState(false);
-  const [openLocations, setOpenLocations] = useState(false);
   const logo = require('../assets/Alfafood_logo_white.png');
 
   useEffect(() => {
@@ -109,7 +108,7 @@ export default function Navigation({ data }) {
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
-          onClick={() => { setOpenNav(!openNav); setOpenLocations(false) }}
+          onClick={() => { setOpenNav(!openNav); }}
 
         >
           {openNav ? (
