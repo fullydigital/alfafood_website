@@ -35,8 +35,8 @@ export default function Navigation({data}) {
         color="white"
         className="p-1 font-semibold"
       >
-        <p className="items-center cursor-pointer text-left" onClick={() => setOpenLocations(!openLocations)}>Filialen</p>
-        <div className={openLocations ? 'relative' : 'collapse'}>
+        <NavLink className="items-center cursor-pointer text-left" to="/location">Standorte</NavLink>
+        {/* <div className={openLocations ? 'relative' : 'collapse'}>
           <Collapse className='container lg:absolute lg:top-4 lg:left-0 w-36 lg:pb-6 lg:bg-gray-800' open={openLocations}>
             <div className="flex flex-col text-left mt-2 leading-7 ml-4">
               {
@@ -51,7 +51,7 @@ export default function Navigation({data}) {
               }
             </div>
           </Collapse>
-        </div>
+        </div> */}
       </Typography>
 
 

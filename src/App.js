@@ -23,13 +23,16 @@ function App() {
   const [contact, setContact] = useState(null);
   const [franchise, setFranchise] = useState(null);
   const [offers, setOffers] = useState(null);
+  const [locationText, setLocationText] = useState(null);
 
   const query = `
   {
     aboutUsCollection {
       items {
         headline
-        text
+        text {
+          json
+        }
         image {
           url
         }
@@ -85,6 +88,14 @@ function App() {
         }
       }
     }
+  locationOverviewCollection {
+      items {
+        headline
+        text {
+          json
+        }
+      }
+    }
   }
   `;
 
@@ -113,6 +124,7 @@ function App() {
         setContact(data.contactPageCollection.items[0])
         setFranchise(data.franchisePageCollection.items[0])
         setOffers(data.offersPageCollection.items[0])
+        setLocationText(data.locationOverviewCollection.items[0])
       })
   }, [query]);
 
@@ -157,7 +169,7 @@ function App() {
         <Route path='/franchise' element={<FranchisePage franchise={franchise} />} />
         <Route path='/offers' element={<OffersPage locations={locations} offers={offers} />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/location' element={<LocationOverviewPage locations={locations} />} />
+        <Route path='/location' element={<LocationOverviewPage locations={locations} data={locationText} />} />
         <Route path='/location/:id' element={<LocationPage data={locations} />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
