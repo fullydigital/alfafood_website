@@ -158,7 +158,7 @@ function App() {
         <Route path='/' exact element={<HomePage locations={locations} />} />
         <Route path='/about' element={<AboutUsPage data={aboutUs} />} />
         <Route path='/contact' element={<ContactPage contact={contact} />} />
-        <Route path='/career' element={<CarrerPage data={carrer} />} />
+        <Route path='/career' element={<CarrerPage data={carrer} locations={locations} />} />
         <Route path='/franchise' element={<FranchisePage franchise={franchise} />} />
         <Route path='/offers' element={<OffersPage locations={locations} offers={offers} />} />
         <Route path='/login' element={<LoginPage />} />
