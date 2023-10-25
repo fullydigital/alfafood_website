@@ -6,7 +6,7 @@ import Questions from '../components/Home/Questions'
 import Career from "../components/Home/Career";
 import Filialen from '../components/Home/Filialen'
 
-export default function HomePage() {
+export default function HomePage({locations}) {
   const [page, setPage] = useState(null);
   const [locationText, setLocationText] = useState(null);
 
@@ -64,7 +64,7 @@ export default function HomePage() {
       <Hero />
       <MoreAbout data={page} />
       <Choosing />
-      <Filialen data={locationText} />
+      <Filialen data={locationText} locations={locations} />
       <Career />
       <Questions />
     </>

@@ -20,30 +20,79 @@ const options = {
 
 export default function LocationPage({ data }) {
   const [ort, setOrt] = useState(null);
+  const [locations, setLocations] = useState(null)
   let { id } = useParams();
 
+  const query = `
+    {
+      contentTypeLocationCollection {
+        items {
+        name
+        street
+        locationNumber
+        phone
+        maps {
+          lon
+          lat
+        }
+        text {
+          json
+        }
+        heroImage {
+          url
+        }
+        sliderImagesCollection {
+          items {
+            url
+          }
+        }
+      }
+    }
+    }
+  `
 
   useEffect(() => {
-    const ort = data.find((item) => item.name === id);
-    setOrt(ort);
-  }, [id, data]);
+    window
+      .fetch(`https://graphql.contentful.com/content/v1/spaces/o2s4pnwpfyn0/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Authenticate the request
+          Authorization: "Bearer Bo8-88iNgEersBWGDGZXpY19H-VtlAwVGYnfj3Go6_k",
+        },
+        // send the GraphQL query
+        body: JSON.stringify({ query }),
+      })
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors);
+        }
 
-  console.log(ort);
+        // rerender the entire component with new data
+        setLocations(data.contentTypeLocationCollection.items)
+      })
+  }, [query]);
 
-  if(!ort) return <p>Loading...</p>
+
+  if(!locations) return <p>Loading...</p>
+
+  if (locations) {
+  console.log(locations.find((item) => item.name === id))
+  const ort = locations.find((item) => item.name === id);
 
   return (
     <>
-      <div className='h-300 w-full bg-cover' style={{ backgroundImage: `url(${background})` }} />
+      <div className='h-300 2xl:h-400 w-full object-contain bg-no-repeat bg-center bg-black' style={{ backgroundImage: `url(${ort.heroImage.url})` }} />
       <div className='bg-gray-400 pt-4 pb-8 pl-8 mb-8 lg:mb-20'>
         <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-bold'>{ort.name}</span></h2>
       </div>
       <div className='flex flex-col w-10/12 mx-auto lg:flex-row'>
         <div className='mb-10 lg:basis-4/6 lg:mb-24'>
-          <Carousel className='h-60 md:h-80 xl:h-200' slideInterval={3000}>
-            <img src={require('../assets/aboutHero.jpg')} alt="" />
-            <img src={require('../assets/aboutUsImage.jpg')} alt="" />
-            <img src={require('../assets/heroImage.jpg')} alt="" />
+          <Carousel className='h-60 md:h-80 xl:h-400' slideInterval={3000}>
+            {ort.sliderImagesCollection.items.map((sliderImage) => {
+              return <img className="object-resize" src={sliderImage.url} alt="" />
+            })}
           </Carousel>
           <div className='text-left mt-8 mb-10'>
             <h2 className='text-4xl text-green-700 mb-8'>Alfafood Filiale <span className="font-semibold">{ort.name}</span></h2>
@@ -90,4 +139,5 @@ export default function LocationPage({ data }) {
       </div>
     </>
   )
+  }
 }

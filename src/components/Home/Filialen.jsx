@@ -4,10 +4,9 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/module
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import locations from '../../data/locations';
 import {NavLink} from "react-router-dom";
 
-export default function Filialen({data}) {
+export default function Filialen({data, locations}) {
   return (
     <div className='w-3/4 xl:w-9/12 mt-12 mx-auto text-left'>
       <h2 className='text-5xl font-bold mb-4'>{data.headline ? data.headline : 'Unsere Standorte'}</h2>
@@ -38,6 +37,7 @@ export default function Filialen({data}) {
         scrollbar={{ draggable: true }}
       >
         {locations.map((location) => {
+          console.log(location);
           return (
             <SwiperSlide>
               <NavLink to={`/location/${location.name}`}>
@@ -45,7 +45,7 @@ export default function Filialen({data}) {
                 <div className='absolute pr-10 py-3 top-5 bg-gray-600 opacity-70'>
                   <p className='text-3xl text-left pl-5 text-white'>{location.name}</p>
                 </div>
-                <img src={require('../../assets/aboutUsImage.jpg')} alt="" />
+                <img src={location.heroImage.url ? location.heroImage.url : require('../../assets/aboutHero.jpg')} alt="" />
               </div>
                 </NavLink>
             </SwiperSlide>

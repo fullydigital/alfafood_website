@@ -50,21 +50,6 @@ function App() {
         }
       }
     }
-    contentTypeLocationCollection {
-      items {
-        name
-        street
-        locationNumber
-        phone
-        maps {
-          lon
-          lat
-        }
-        text {
-          json
-        }
-      }
-    }
   contactPageCollection {
     items {
       headline
@@ -94,6 +79,14 @@ function App() {
         text {
           json
         }
+      }
+    }
+  contentTypeLocationCollection {
+        items {
+        name
+  heroImage {
+  url
+  }
       }
     }
   }
@@ -162,14 +155,14 @@ function App() {
         </span>
       </CookieConsent>
       <Routes>
-        <Route path='/' exact element={<HomePage />} />
+        <Route path='/' exact element={<HomePage locations={locations} />} />
         <Route path='/about' element={<AboutUsPage data={aboutUs} />} />
         <Route path='/contact' element={<ContactPage contact={contact} />} />
-        <Route path='/career' element={<CarrerPage data={carrer} locations={locations} />} />
+        <Route path='/career' element={<CarrerPage data={carrer} />} />
         <Route path='/franchise' element={<FranchisePage franchise={franchise} />} />
         <Route path='/offers' element={<OffersPage locations={locations} offers={offers} />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/location' element={<LocationOverviewPage locations={locations} data={locationText} />} />
+        <Route path='/location' element={<LocationOverviewPage data={locationText} />} />
         <Route path='/location/:id' element={<LocationPage data={locations} />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
