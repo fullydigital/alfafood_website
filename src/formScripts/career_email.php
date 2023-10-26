@@ -4,7 +4,7 @@ $email_from = "absender@domain.de";
 $sendermail_antwort = true;
 $name_von_emailfeld = "Email";
 
-$empfaenger = "michael@mreinert.de";
+$empfaenger = "info@alfafood.eu";
 $mail_cc = "";
 $betreff = "Neue Newslettereintragung";
 

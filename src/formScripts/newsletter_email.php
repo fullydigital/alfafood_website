@@ -4,7 +4,7 @@ $email_from = "absender@domain.de";
 $sendermail_antwort = true;
 $name_von_emailfeld = "Email";
 
-$empfaenger = "michael@mreinert.de";
+$empfaenger = "info@alfafood.eu";
 $mail_cc = "";
 $betreff = "Neue Newslettereintragung";
 
@@ -32,8 +32,8 @@ foreach ($_POST as $name => $value) {
     continue; // Ignore Felder werden nicht in die Mail eingefügt
   }
   $msg .= "$name: \n$value\n\n";
-  if ($name === 'Filiale' && value === 'Ingolstadt') {
-      $empfaenger = 'ingolstadt@alfafood.eu';
+  if ($name === 'location' && value === 'Ingolstadt') {
+    $empfaenger = 'ingolstadt@alfafood.eu';
   }
 }
 
