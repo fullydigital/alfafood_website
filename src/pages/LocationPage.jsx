@@ -81,7 +81,7 @@ export default function LocationPage({ data }) {
 
     return (
       <>
-        <div className='h-300 2xl:h-400 w-full bg-contain bg-no-repeat bg-center bg-black' style={{ backgroundImage: `url(${ort.heroImage.url})` }} />
+        <div className='h-56 md:h-80 2xl:h-400 w-full bg-cover bg-no-repeat bg-center bg-black' style={{ backgroundImage: `url(${ort.heroImage.url})` }} />
         <div className='bg-gray-400 pt-4 pb-8 pl-8 mb-8 lg:mb-20'>
           <h2 className='text-5xl text-left lg:py-4'>Alfafood | <span className='font-bold'>{ort.name}</span></h2>
         </div>

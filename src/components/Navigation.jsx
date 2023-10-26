@@ -34,7 +34,7 @@ export default function Navigation({ data }) {
         color="white"
         className="p-1 font-semibold"
       >
-        <NavLink className="items-center cursor-pointer text-left" to="/location">Standorte</NavLink>
+        <NavLink className="flex items-center" to="location">Standorte</NavLink>
       </Typography>
 
 
