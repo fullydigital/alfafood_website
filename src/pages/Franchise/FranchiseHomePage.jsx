@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
-import { content } from './FranchiseData';
 import background from '../../assets/aboutUsImage.jpg';
 
 const CUSTOM_ANIMATION = {
