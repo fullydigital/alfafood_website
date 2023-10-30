@@ -18,37 +18,12 @@ const LOGIN_MUTATION = gql`
   }
 `
 
-const SIGNUP_MUTATION = gql`
-  mutation SignupMutation(
-    $email: String,
-    $password: String,
-    $firstname: String,
-    $lastname: String
-  ) {
-    createUser(
-      email: $email,
-      password: $password,
-      firstName: $firstname,
-      lastName: $lastname,
-      username: $firstname
-    ) {
-      token
-    }
-  }
-`
-
 
 
 
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  // const [formState] = useState({
-  //   login: true,
-  //   email: '',
-  //   password: '',
-  //   name: ''
-  // });
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -62,18 +37,6 @@ const LoginPage = () => {
       navigate('/franchiseMember');
     }
   });
-
-  // const [signup] = useMutation(SIGNUP_MUTATION, {
-  //   variables: {
-  //     name: formState.name,
-  //     email: formState.email,
-  //     password: formState.password
-  //   },
-  //   onCompleted: ({ signup }) => {
-  //     localStorage.setItem(AUTH_TOKEN, signup.token);
-  //     navigate('/');
-  //   }
-  // });
 
   return (
     <>
