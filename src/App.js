@@ -16,10 +16,9 @@ import OffersPage from "./pages/OffersPage";
 import LocationOverviewPage from './pages/LocationOverviewPage';
 import Impressum from './pages/Impressum';
 import AGBs from './pages/AGBs';
-import {CookieConsent} from "react-cookie-consent";
+import { CookieConsent } from "react-cookie-consent";
 
 function App() {
-  const [aboutUs, setAboutUs] = useState(null);
   const [carrer, setCarrer] = useState(null);
   const [locations, setLocations] = useState(null);
   const [contact, setContact] = useState(null);
@@ -29,20 +28,6 @@ function App() {
 
   const query = `
   {
-    aboutUsCollection {
-      items {
-        headline
-        text {
-          json
-        }
-        image {
-          url
-        }
-        video {
-          url
-        }
-      }
-    }
     careerCollection {
       items {
         headline
@@ -113,7 +98,6 @@ function App() {
         }
 
         // rerender the entire component with new data
-        setAboutUs(data.aboutUsCollection.items[0])
         setCarrer(data.careerCollection.items[0])
         setLocations(data.contentTypeLocationCollection.items)
         setContact(data.contactPageCollection.items[0])
@@ -123,7 +107,7 @@ function App() {
       })
   }, [query]);
 
-  if (!aboutUs) {
+  if (!carrer) {
     return "Loading...";
   }
 
@@ -136,14 +120,14 @@ function App() {
         cookieName="cookieAlfafood"
         style={{ background: '#000001', marginLeft: '0px' }}
         buttonStyle={{
-        color: '#FFFFFF',
+          color: '#FFFFFF',
           fontSize: '13px',
           background: '#6D86A6',
           padding: '7px 45px',
           margin: '20px 25px'
-      }}
+        }}
         expires={150}
-        >
+      >
         <p style={{ marginBottom: '-10px', marginLeft: '10px', fontSize: '13px' }}>
           Wir und einige unserer Partner setzen zu den in den Cookie-Richtlinien beschriebenen Zwecken<br />{' '}
           Cookies und ähnliche Technologien ein.<br />
@@ -158,7 +142,7 @@ function App() {
       </CookieConsent>
       <Routes>
         <Route path='/' exact element={<HomePage locations={locations} />} />
-        <Route path='/about' element={<AboutUsPage data={aboutUs} />} />
+        <Route path='/about' element={<AboutUsPage />} />
         <Route path='/contact' element={<ContactPage contact={contact} />} />
         <Route path='/career' element={<CarrerPage data={carrer} locations={locations} />} />
         <Route path='/franchise' element={<FranchisePage franchise={franchise} />} />

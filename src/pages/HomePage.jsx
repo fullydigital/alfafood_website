@@ -6,9 +6,10 @@ import Questions from '../components/Home/Questions'
 import Career from "../components/Home/Career";
 import Filialen from '../components/Home/Filialen'
 
-export default function HomePage({locations}) {
+export default function HomePage({ locations }) {
   const [page, setPage] = useState(null);
   const [locationText, setLocationText] = useState(null);
+  const [heroImage, setHeroImage] = useState(null);
 
   const query = `
   {
@@ -26,6 +27,13 @@ export default function HomePage({locations}) {
         headline
         subline
         text
+      }
+    }
+    homeHeroImageCollection {
+      items {
+        image {
+          url
+        }
       }
     }
   }
@@ -52,6 +60,7 @@ export default function HomePage({locations}) {
         // rerender the entire component with new data
         setPage(data.aboutUsHomeTextCollection.items[0])
         setLocationText(data.locationHomeTextCollection.items[0])
+        setHeroImage(data.homeHeroImageCollection.items[0])
       })
   }, [query]);
 
@@ -61,7 +70,7 @@ export default function HomePage({locations}) {
 
   return (
     <>
-      <Hero />
+      <Hero data={heroImage} />
       <MoreAbout data={page} />
       <Choosing />
       <Filialen data={locationText} locations={locations} />

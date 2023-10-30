@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {BLOCKS, MARKS} from '@contentful/rich-text-types';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
@@ -16,12 +16,61 @@ const options = {
   }
 };
 
-export default function AboutUsPage({data}) {
+export default function AboutUsPage() {
+  const [data, setData] = useState(null);
+
+  const query = `
+    {
+      aboutUsCollection {
+      items {
+        headline
+        text {
+          json
+        }
+        image {
+          url
+        }
+        video {
+          url
+        }
+        heroImage {
+          url
+        }
+      }
+    }
+    }
+  `
+
+  useEffect(() => {
+    window
+      .fetch(`https://graphql.contentful.com/content/v1/spaces/o2s4pnwpfyn0/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Authenticate the request
+          Authorization: "Bearer Bo8-88iNgEersBWGDGZXpY19H-VtlAwVGYnfj3Go6_k",
+        },
+        // send the GraphQL query
+        body: JSON.stringify({ query }),
+      })
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors);
+        }
+
+        // rerender the entire component with new data
+        setData(data.aboutUsCollection.items[0])
+      })
+  }, [query]);
+
+  if (!data) return 'Loading...'
+
   return (
     <>
       {/* Hero Start */}
       <div className='lg:h-200'>
-        <img className='md:h-200 w-screen object-cover grayscale-50' src={require('../assets/aboutHero.jpg')} alt="Familie Burcak" />
+        <img className='md:h-200 w-screen object-cover' src={data.heroImage.url} alt="Familie Burcak" />
       </div>
       {/* Hero End */}
       {/* About Family start */}
