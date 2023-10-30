@@ -14,6 +14,8 @@ import FranchiseHomePage from './pages/Franchise/FranchiseHomePage';
 import LoginPage from './pages/LoginPage';
 import OffersPage from "./pages/OffersPage";
 import LocationOverviewPage from './pages/LocationOverviewPage';
+import Impressum from './pages/Impressum';
+import AGBs from './pages/AGBs';
 import {CookieConsent} from "react-cookie-consent";
 
 function App() {
@@ -163,6 +165,8 @@ function App() {
         <Route path='/offers' element={<OffersPage locations={locations} offers={offers} />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/location' element={<LocationOverviewPage data={locationText} />} />
+        <Route path='/datenschutz' element={<AGBs />} />
+        <Route path='/impressum' element={<Impressum />} />
         <Route path='/location/:id' element={<LocationPage data={locations} />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />

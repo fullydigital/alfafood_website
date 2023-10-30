@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const currentYear = new Date().getFullYear();
 
@@ -16,7 +17,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              About Us
+              <NavLink to="about">Über uns</NavLink>
             </Typography>
           </li>
           <li>
@@ -26,7 +27,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Impressum
+              <NavLink  to="impressum">Impressum</NavLink>
             </Typography>
           </li>
           <li>
@@ -36,7 +37,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              AGBs
+              <NavLink to="datenschutz">AGBs</NavLink>
             </Typography>
           </li>
           <li>
@@ -46,7 +47,7 @@ export default function Footer() {
               color="white"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Kontaktiere uns
+              <NavLink to="contact">Kontaktiere uns</NavLink>
             </Typography>
           </li>
         </ul>

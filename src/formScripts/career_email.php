@@ -8,8 +8,8 @@ $empfaenger = "info@alfafood.eu";
 $mail_cc = "";
 $betreff = "Neue Newslettereintragung";
 
-$url_ok = "https://www.mreinert.de";
-$url_fehler = "https://www.mreinert.de";
+$url_ok = "https://www.alfafood.eu";
+$url_fehler = "https://www.alfafood.eu";
 
 // Diese Felder werden nicht in der Mail stehen
 $ignore_fields = array('submit');
