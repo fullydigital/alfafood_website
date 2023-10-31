@@ -31,6 +31,8 @@ export default function HomePage({ locations }) {
     }
     homeHeroImageCollection {
       items {
+        headline
+        subline
         image {
           url
         }
