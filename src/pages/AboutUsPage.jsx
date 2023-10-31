@@ -69,8 +69,8 @@ export default function AboutUsPage() {
   return (
     <>
       {/* Hero Start */}
-      <div className='lg:h-200'>
-        <img className='md:h-200 w-screen object-cover' src={data.heroImage.url} alt="Familie Burcak" />
+      <div>
+        <img className='md:h-200 2xl:h-300 w-screen object-cover' src={data.heroImage.url} alt="Familie Burcak" />
       </div>
       {/* Hero End */}
       {/* About Family start */}

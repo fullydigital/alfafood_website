@@ -44,6 +44,8 @@ export default function LocationPage({ data }) {
             url
           }
         }
+        openingOne
+        openingTwo
       }
     }
     }
@@ -76,7 +78,6 @@ export default function LocationPage({ data }) {
   if (!locations) return <p>Loading...</p>
 
   if (locations) {
-    console.log(locations.find((item) => item.name === id))
     const ort = locations.find((item) => item.name === id);
 
     return (
@@ -130,8 +131,8 @@ export default function LocationPage({ data }) {
                 <img src={require('../assets/clock.png')} className='h-8 w-8 mx-auto' alt="" />
               </div>
               <h3 className='font-bold text-white mb-6 text-xl uppercase'>Öffnungszeiten</h3>
-              <p className='mb-2'>Mo.-Fr.: 11.00 - 23.00 Uhr</p>
-              <p>Sa. & So.: 10.00 - 23.00 Uhr</p>
+              <p className='mb-2'>{ort.openingOne}</p>
+              <p>{ort.openingTwo}</p>
             </div>
           </div>
         </div>
