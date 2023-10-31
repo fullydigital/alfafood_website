@@ -78,6 +78,10 @@ export default function FranchiseHomePage() {
                               item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
                                 <source src={item.url} type="video/mp4" />
                               </video> :
+                              item.contentType === 'video/quicktime' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
+                                <source src={item.url} type="video/mp4" />
+                              </video>
+                              :
                                 item.contentType === 'application/pdf' ?
                                   <iframe src={item.url} className='h-250 w-200 mx-auto' title={key} /> : null
                           }
