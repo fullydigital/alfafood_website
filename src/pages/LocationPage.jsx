@@ -88,7 +88,7 @@ export default function LocationPage({ data }) {
         </div>
         <div className='flex flex-col w-10/12 mx-auto lg:flex-row'>
           <div className='mb-10 lg:basis-4/6 lg:mb-24'>
-            <Carousel className='h-60 md:h-80 xl:h-1/2' slideInterval={3000}>
+            <Carousel className='h-60 md:h-80 xl:h-230' slideInterval={3000}>
               {ort.sliderImagesCollection.items.map((sliderImage) => {
                 return <img className="object-resize" src={sliderImage.url} alt="" />
               })}
@@ -100,10 +100,6 @@ export default function LocationPage({ data }) {
             <iframe
               className='w-full h-100 md:h-200'
               title='location map'
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
               src={`https://maps.google.com/maps?q=${ort.maps.lat},${ort.maps.lon}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
             >
             </iframe>
