@@ -74,7 +74,7 @@ export default function FranchiseHomePage() {
                       return (
                         <div>
                           {
-                            item.contentType === 'image/jpeg' ? <img src={item.url} className='w-1/2 mx-auto' alt='' /> :
+                            item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='w-1/2 mx-auto' alt='' /> :
                               item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
                                 <source src={item.url} type="video/mp4" />
                               </video> :

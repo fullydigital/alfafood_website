@@ -94,14 +94,8 @@ export default function LocationOverviewPage({data}) {
             </div>
           )
         })}
-        <div className='relative w-10/12 md:w-[45%] xl:w-[30%] mx-auto mb-10'>
-          <div className='absolute pr-10 py-3 top-5 bg-gray-600 opacity-70'>
-            <p className='text-3xl text-left pl-5 text-white'>Rosenheim coming soon...</p>
-          </div>
-          <img src={require('../assets/aboutUsImage.jpg')} alt="" />
-        </div>
-      </div>
     </div>
+      </div>
   )
 }
 
