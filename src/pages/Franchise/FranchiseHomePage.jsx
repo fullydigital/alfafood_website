@@ -74,7 +74,6 @@ export default function FranchiseHomePage() {
                       return (
                         <div>
                           {
-                            item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='w-1/2 mx-auto' alt='' /> :
                               item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
                                 <source src={item.url} type="video/mp4" />
                               </video> :
@@ -83,7 +82,9 @@ export default function FranchiseHomePage() {
                               </video>
                               :
                                 item.contentType === 'application/pdf' ?
-                                  <iframe src={item.url} className='h-250 w-200 mx-auto' title={key} /> : null
+                                  <iframe src={item.url} className='h-300 w-200 mx-auto' title={key} /> :
+                                item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='w-1/2 mx-auto' alt='' />
+                                : null
                           }
                         </div>
                       )
