@@ -73,7 +73,7 @@ export default function OffersPage({locations, offers}) {
           <div className='flex flex-col text-white w-4/5 mx-auto text-xl font-semibold mt-4 pb-10'>
             <p>1. Mit dem Handy QR-Code scannen.</p>
             <p className='mb-6'>2. Nachricht "Newsletter" senden.</p>
-            <img src={require('../assets/AlfafoodQRCode.png')} className='h-32 w-32 mx-auto' alt="" />
+            <img src={require('../assets/qrcodenew.png')} className='h-32 w-32 mx-auto' alt="" />
           </div>
         </div>
       </div>
