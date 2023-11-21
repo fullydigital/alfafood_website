@@ -17,6 +17,7 @@ import LocationOverviewPage from './pages/LocationOverviewPage';
 import Impressum from './pages/Impressum';
 import AGBs from './pages/AGBs';
 import { CookieConsent } from "react-cookie-consent";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   const [carrer, setCarrer] = useState(null);
@@ -152,6 +153,7 @@ function App() {
         <Route path='/datenschutz' element={<AGBs />} />
         <Route path='/impressum' element={<Impressum />} />
         <Route path='/location/:id' element={<LocationPage data={locations} />} />
+        <Route path='/Cl2GCwWasmv5gPbHLtwU/' exact element={<RegisterPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
         </Route>

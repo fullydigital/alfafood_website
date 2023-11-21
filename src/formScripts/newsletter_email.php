@@ -23,7 +23,7 @@ $n = date("d");
 $monat = date("m");
 $time = date("H:i");
 
-// Erste Zeile unserer Email
+// Erste Zeile unserer E-Mail
 $msg = "Gesendet am $tag, den $n.$monat.$jahr - $time Uhr \n\n";
 
 // Hier werden alle Eingabefelder abgefragt
@@ -37,7 +37,7 @@ foreach ($_POST as $name => $value) {
   }
 }
 
-// E-Mail Adresse des Besuchers als Absender
+// E-Mail-Adresse des Besuchers als Absender
 if ($sendermail_antwort and isset($_POST['Email']) and filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)) {
   $email_from = $_POST['Email'];
 }

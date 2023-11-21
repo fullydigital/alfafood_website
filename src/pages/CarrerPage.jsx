@@ -20,9 +20,9 @@ const options = {
 export default function CarrerPage({ data, locations }) {
 
         const optionss = [
-                { value: 'nueremberg', label: 'Verkäufer' },
-                { value: 'augsburg', label: 'Kaufmann/-frau im Großhandel' },
-                { value: 'ingolstadt', label: 'Fachlagerist' }
+                { value: '1', label: 'Verkäufer' },
+                { value: '2', label: 'Kaufmann/-frau im Großhandel' },
+                { value: '3', label: 'Fachlagerist' }
         ]
 
         const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
@@ -41,39 +41,39 @@ export default function CarrerPage({ data, locations }) {
                                                 <form action="../formScripts/career_email.php" method="post" class="space-y-8">
                                                         <div>
                                                                 <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vorname</label>
-                                                                <input type="text" id="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Vorname" required />
+                                                                <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Vorname" required />
                                                         </div>
                                                         <div>
                                                                 <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nachname</label>
-                                                                <input type="text" id="lastname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Nachname" required />
+                                                                <input type="text" id="lastname" name="lastname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Nachname" required />
                                                         </div>
                                                         <div>
                                                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
-                                                                <input type="email" id="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@email.com" required />
+                                                                <input type="email" id="email" name="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@email.com" required />
                                                         </div>
                                                         <div>
                                                                 <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filiale</label>
-                                                                <Select options={filialen} id="location" />
+                                                                <Select options={filialen} id="location" name="location" />
                                                         </div>
                                                         <div>
-                                                                <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Stelle</label>
-                                                                <Select options={optionss} id="location" />
+                                                                <label for="professional" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Stelle</label>
+                                                                <Select options={optionss} id="professional" name="professional" />
                                                         </div>
                                                         <div class="sm:col-span-2">
                                                                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Nachricht</label>
-                                                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Nachricht..."></textarea>
+                                                                <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Nachricht..."></textarea>
                                                         </div>
                                                         <div>
                                                                 <label for="letter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Anschreiben</label>
-                                                                <input type="file" id="letter" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
+                                                                <input type="file" id="letter" name="letter" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
                                                         </div>
                                                         <div>
                                                                 <label for="cv" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lebenslauf</label>
-                                                                <input type="file" id="cv" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
+                                                                <input type="file" id="cv" name="cv" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
                                                         </div>
                                                         <div>
                                                                 <label for="zeugnisse" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Zeugnisse</label>
-                                                                <input type="file" id="zeugnisse" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
+                                                                <input type="file" id="zeugnisse" name="zeugnisse" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" required />
                                                         </div>
                                                         <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nachricht senden</button>
                                                 </form>
