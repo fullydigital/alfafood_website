@@ -68,13 +68,13 @@ export default function FranchiseHomePage() {
             return (
               <Accordion open={open === item.id} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(item.id)}>{item.headline}</AccordionHeader>
-                <AccordionBody>
+                <AccordionBody className="flex flex-row justify-center gap-4">
                   {
                     item.contentCollection.items.map((item, key) => {
                       return (
                         <div>
                           {
-                              item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
+                              item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300" controls>
                                 <source src={item.url} type="video/mp4" />
                               </video> :
                               item.contentType === 'video/quicktime' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
@@ -83,7 +83,7 @@ export default function FranchiseHomePage() {
                               :
                                 item.contentType === 'application/pdf' ?
                                   <iframe src={item.url} className='h-300 w-200 mx-auto' title={key} /> :
-                                item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='w-1/2 mx-auto' alt='' />
+                                item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='lg:h-[700px] mx-auto' alt='' />
                                 : null
                           }
                         </div>

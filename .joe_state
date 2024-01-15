@@ -1,0 +1,47 @@
+# JOE state file v1.0
+search
+	backwards 0
+	ignore 0
+	replace 0
+	block_restrict 0
+	regex 0
+done
+macros
+done
+files
+	"README.md\n"
+	"README.md\n"
+	"/etc/nginx/sites-enabled/\n"
+	"/etc/nginx/sites-enabled/alfafood\n"
+	"/etc/nginx/sites-enabled/alfafood\n"
+	"* Build Log *\n"
+	"* Build Log *\n"
+done
+find
+done
+replace
+done
+run
+done
+build
+	"y\n"
+done
+grep
+done
+cmd
+done
+math
+done
+yank
+	" "
+	"/bin/sh: 3: Syntax error: \")\" unexpected\n\n "
+done
+file_pos
+	0 "README.md"
+	0 "/etc/nginx/sites-enabled/"
+	43 "/etc/nginx/sites-enabled/alfafood"
+	7 "* Build Log *"
+done
+colors
+	"xterm-256color" "default"
+done

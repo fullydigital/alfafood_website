@@ -32,8 +32,11 @@ foreach ($_POST as $name => $value) {
     continue; // Ignore Felder werden nicht in die Mail eingefügt
   }
   $msg .= "$name: \n$value\n\n";
-  if ($name === 'location' && $value === 'Ingolstadt') {
+  if ($name === 'location' && $value === 1) {
     $empfaenger = 'ingolstadt@alfafood.eu';
+  }
+  elseif ($name === 'location' && $value === 2) {
+    $empfaenger = 'rosenheim@alfafood.eu';
   }
 }
 
