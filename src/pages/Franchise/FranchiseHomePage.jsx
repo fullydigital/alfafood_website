@@ -10,8 +10,11 @@ const CUSTOM_ANIMATION = {
 export default function FranchiseHomePage() {
   const [open, setOpen] = useState(0);
   const [data, setData] = useState(null);
+  const [divOpen, setDivOpen] = useState('');
+  const [categories, setCategories] = useState([]);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
+  const handleDivOpen = (value) => setDivOpen(divOpen === value ? 0 : value);
 
   const query = `
     {
@@ -19,6 +22,7 @@ export default function FranchiseHomePage() {
         items {
           id
           headline
+          category
           contentCollection {
             items {
               url
@@ -49,9 +53,12 @@ export default function FranchiseHomePage() {
         }
 
         // rerender the entire component with new data
+        let frCategories = categories.concat(data.franchiseCollection.items.map(({category}) => (category)));
+        let unique = [...new Set(frCategories)];
+        setCategories(unique);
         setData(data.franchiseCollection.items);
       })
-  }, [query]);
+  }, [query, categories]);
 
   if (!data) {
     return 'Loading ...';
@@ -62,10 +69,22 @@ export default function FranchiseHomePage() {
       <div className="w-full h-72 text-white flex bg-cover" style={{ backgroundImage: `url(${background})` }}>
         <h1 className='text-6xl font-semibold mx-auto my-auto'>Alfafood Franchise</h1>
       </div>
+      <div className='flex flex-row justify-center gap-10 mt-20 mx-20 flex-wrap'>
+        {categories.map((category, index) => {
+          return (
+            <div className='h-48 w-48 bg-red-600 rounded-lg' onClick={() => handleDivOpen(category)}>
+              <p className='my-20 font-semibold text-white'>{category}</p>
+            </div>
+          )
+        })}
+      </div>
+
+
       <div className='w-3/4 mx-auto mt-12 mb-20'>
         {
-          data.map((item, key) => {
+          data.map((item) => {
             return (
+              item.category === divOpen ?
               <Accordion open={open === item.id} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(item.id)}>{item.headline}</AccordionHeader>
                 <AccordionBody className="flex flex-row justify-center gap-4">
@@ -91,7 +110,7 @@ export default function FranchiseHomePage() {
                     })
                   }
                 </AccordionBody>
-              </Accordion>
+              </Accordion> : null
             )
           })
         }
