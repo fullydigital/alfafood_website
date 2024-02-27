@@ -1,17 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Carousel } from 'flowbite-react';
-import Select from 'react-select';
 
-export default function OffersPage({locations, offers}) {
-  const [email, setEmail] = useState('');
-  const [adress, setAdress] = useState('');
-  const [location, setLocation] = useState('');
-  const [phone, setPhone] = useState('');
-  const [company, setCompany] = useState('');
-  const [compLoc, setCompLoc] = useState(null);
-
-
-  const filialen = locations.map((filiale) => ({ value: filiale.name, label: filiale.name }))
+export default function OffersPage({offers}) {
 
   return (
     <>
@@ -26,67 +16,14 @@ export default function OffersPage({locations, offers}) {
           </Carousel>
         </div>
         <div className="flex flex-col py-8 justify-center w-10/12 mx-auto text-left lg:basis-1/2">
-          <div className="lg:w-10/12 lg:mx-auto">
-          <h2 className="text-2xl font-semibold mb-6 lg:text-4xl">Unsere Angebote der Woche</h2>
-          <h3 className="mb-6 lg:text-xl">{offers.headline}</h3>
-          <p className="mb-6 text-red-700 font-bold lg:text-xl">{offers.validity}</p>
-          <img src="../assets/QR-Code.png" className="h-60 w-60" alt="QR-Code für die App mit aktuellen Angeboten" />
-          {/* <p className="lg:text-xl">Unsere Angebote könnt Ihr <a href="#whatsapp" className="text-red-700 underline">hier</a> auch ganz unkompliziert automatisch als WhatsApp - Newsletter erhalten.</p> */}
+            <div className="lg:w-10/12 lg:mx-auto">
+            <h2 className="text-2xl font-semibold mb-6 lg:text-4xl">Unsere Angebote der Woche</h2>
+            <h3 className="mb-6 lg:text-xl">{offers.headline}</h3>
+            <p className="mb-6 text-red-700 font-bold lg:text-xl">{offers.validity}</p>
+            <img src={require("../assets/Offers.jpg")} className="w-96 mx-auto mt-14" alt="QR-Code für die App mit aktuellen Angeboten" />
           </div>
         </div>
       </div>
-    {/* <div className="w-full bg-gray-300 flex flex-col">
-      <div className="w-10/12 mx-auto pt-8 lg:pt-12 pb-6 lg:pb-10">
-        <h2 className="text-2xl font-semibold mb-4 lg:text-4xl">Zum Newsletter anmelden</h2>
-        <p className="lg:text-xl">Melde dich zu unserem Email Newsletter an um keine Angebote mehr zu verpassen!</p>
-      </div>
-      <form method="post" action="../formScripts/newsletter_email.php">
-      <div className="pb-12 relative z-20">
-        <div className="flex flex-col w-10/12 lg:flex-row lg:flex-wrap mx-auto">
-          <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="Email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
-            <input type="email" id="Email" name="Email" value={email} onChange={(value) => setEmail(value.target.value)} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@mail.com" required />
-          </div>
-          <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="adress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Adresse</label>
-            <input type="text" id="adress" name="adress" value={adress} onChange={(value) => setAdress(value.target.value)} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Straße, Nummer" required />
-          </div>
-          <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="local" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ort</label>
-            <input type="text" id="local" name="local" value={location} onChange={(value) => setLocation(value.target.value)} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Postleitzahl, Ort" required />
-          </div>
-          <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telefonnummer</label>
-            <input type="text" id="phone" name="phone" value={phone} onChange={(value) => setPhone(value.target.value)} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Telefonnummer" required />
-          </div>
-          <div className="mb-6 lg:basis-1/3 lg:px-2">
-            <label for="filiale" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Firmenname</label>
-            <input type="text" id="filiale" name="filiale" value={company} onChange={(value) => setCompany(value.target.value)} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Firmenname" required />
-          </div>
-          <div className="flex flex-col pb-14 w-2/3 mx-auto lg:basis-1/3 lg:px-2">
-            <label for="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filiale</label>
-            <Select options={filialen} id="location" name="location" value={compLoc} onChange={setCompLoc}/>
-          </div>
-        </div>
-        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nachricht senden</button>
-      </div>
-      </form>
-    </div> */}
-      {/* {/* <div className='flex flex-col lg:flex-row w-full z-10 relative' id="whatsapp">
-        <div className='bg-green-500 text-white lg:basis-1/2 font-semibold text-2xl pb-10'>
-          <div className='w-4/5 mx-auto mt-4 lg:mt-12'>
-            <img src={require('../assets/whatsapp.png')} className='mx-auto mb-4' alt="" />
-            <h2>Unsere Angebote gibts auch als WhatsApp Newsletter</h2>
-          </div>
-        </div>
-        <div className='bg-green-700 lg:basis-1/2'>
-          <div className='flex flex-col text-white w-4/5 mx-auto text-xl font-semibold mt-4 pb-10'>
-            <p>1. Mit dem Handy QR-Code scannen.</p>
-            <p className='mb-6'>2. Nachricht "Newsletter" senden.</p>
-            <img src={require('../assets/qrcodenew.png')} className='h-32 w-32 mx-auto' alt="" />
-          </div>
-        </div>
-      </div> */}
     </>
   )
 }
