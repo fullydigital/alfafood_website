@@ -53,7 +53,7 @@ if (!empty($mail_cc)) {
 }
 
 // Email als UTF-8 senden
-$header .= "\nContent-type: text/plain; charset=utf-8";
+// $header .= "\nContent-type: text/plain; charset=utf-8";
 
 $mail_senden = mail($empfaenger, $betreff, $msg, $header);
 

@@ -4,9 +4,9 @@ $email_from = "absender@domain.de";
 $sendermail_antwort = true;
 $name_von_emailfeld = "Email";
 
-$empfaenger = "info@alfafood.eu";
+$empfaenger = "m_reinert@outlook.com";
 $mail_cc = "";
-$betreff = "Neue Newslettereintragung";
+$betreff = "Neue Bewerbung";
 
 $url_ok = "https://www.alfafood.eu";
 $url_fehler = "https://www.alfafood.eu";

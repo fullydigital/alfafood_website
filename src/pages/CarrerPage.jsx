@@ -20,12 +20,12 @@ const options = {
 export default function CarrerPage({ data, locations }) {
 
         const optionss = [
-                { value: '1', label: 'Verkäufer' },
-                { value: '2', label: 'Kaufmann/-frau im Großhandel' },
-                { value: '3', label: 'Fachlagerist' }
+                { value: 'Verkäufer', label: 'Verkäufer' },
+                { value: 'Kaufmann/-frau im Großhandel', label: 'Kaufmann/-frau im Großhandel' },
+                { value: 'Fachlagerist', label: 'Fachlagerist' }
         ]
 
-        const filialen = locations.map((filiale, index) => ({ value: index, label: filiale.name }))
+        const filialen = locations.map((filiale) => ({ value: filiale.name, label: filiale.name }))
 
         return (
                 <div className="w-10/12 lg:w-11/12 mx-auto flex flex-col lg:flex-row lg:justify-center">
@@ -38,7 +38,7 @@ export default function CarrerPage({ data, locations }) {
                                 <section class="bg-gray-200 dark:bg-gray-900 mb-10 mt-8 lg:mt-16">
                                         <div class="py-8 lg:py-16 px-4 mx-auto text-left max-w-screen-md">
                                                 <h2 class="mb-4 xl:mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bewerbung</h2>
-                                                <form action="../formScripts/career_email.php" method="post" class="space-y-8">
+                                                <form action="../formScripts/career_email.php" method="post" encType='multipart/form-data' class="space-y-8">
                                                         <div>
                                                                 <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vorname</label>
                                                                 <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Vorname" required />
