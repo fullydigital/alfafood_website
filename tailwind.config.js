@@ -23,6 +23,12 @@ module.exports = withMT({
       },
       grayscale: {
         '50': '70%'
+      },
+      colors: {
+        'alfafood-green': '#2f7f35'
+      },
+      listStyleImage: {
+        tomato: 'url("/image/Alfafood_Tomate.png")'
       }
     },
   },
