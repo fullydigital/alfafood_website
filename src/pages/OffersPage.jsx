@@ -6,7 +6,7 @@ export default function OffersPage({offers}) {
   return (
     <>
       <div className="w-full flex flex-col lg:flex-row">
-        <div className="p-6 bg-gray-200 lg:basis-1/2">
+        <div className="p-6 lg:basis-1/2">
           <Carousel className='h-250 md:w-1/2 mx-auto xl:h-400' slideInterval={3000}>
             {offers.offersCollection.items.map((item) => {
               return (
@@ -23,12 +23,12 @@ export default function OffersPage({offers}) {
           </div>
         </div>
       </div>
-      <div className='w-full flex flex-col lg:flex-row'>
-        <div className='lg:basis-1/2 my-auto'>
+      <div className='w-full flex flex-col bg-gray-200 lg:flex-row'>
+        <div className='lg:basis-1/2 pt-8 lg:pt-0 lg:my-auto'>
           <h2 className='text-3xl font-semibold xl:pb-6'>Angebote auch in unserer <span className='text-alfafood-green underline'>App</span> entdecken</h2>
           <ul className='mt-6 mb-10'>
             <section className='flex-row flex w-4/6 md:w-3/6 md:justify-center mx-auto mb-4'>
-              <img src={require('../assets/Alfafood_Tomate.png')} alt="Tomate" className='h-10' />
+              <img src={require('../assets/Alfafood_Tomate.png')} alt="Tomate" className='h-10 md:-ml-12 xl:-ml-14' />
               <li className='my-auto pl-12'>QR-Code Scannen</li>
             </section>
             <section className='flex-row flex w-4/6 justify-center mx-auto mb-4'>
@@ -36,7 +36,7 @@ export default function OffersPage({offers}) {
               <li className='my-auto pl-4 md:pl-6 xl:pl-8'>Registrieren oder Anmelden</li>
             </section>
             <section className='flex-row flex w-4/6 md:justify-center mx-auto'>
-              <img src={require('../assets/Alfafood_Tomate.png')} alt="Tomate" className='h-10' />
+              <img src={require('../assets/Alfafood_Tomate.png')} alt="Tomate" className='h-10 md:ml-5' />
               <li className='my-auto pl-4 md:pl-6 xl:pl-8'>Von den Angeboten profitieren</li>
             </section>
           </ul>
