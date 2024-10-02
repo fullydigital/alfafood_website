@@ -6,7 +6,7 @@ export default function FranchisePage({franchise}) {
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">{franchise.headline}</h2>
         <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">{franchise.subline}</p>
-        <form action="../formScripts/franchise_email.php" method="post" class="space-y-8">
+        <form action="franchise_email.php" method="post" class="space-y-8">
           <div className='flex flex-row justify-between'>
             <div>
               <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vorname</label>
@@ -19,25 +19,25 @@ export default function FranchisePage({franchise}) {
           </div>
           <div>
             <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Firma</label>
-            <input type="text" id="company" name="company" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Lass uns wissen, wie wir Dir helfen können" required />
+            <input type="text" id="company" name="company" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Firmenname" required />
           </div>
           <div className='flex flex-row justify-between'>
             <div>
               <label for="street" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Straße</label>
-              <input type="text" id="street" name="street"  class="shadow-sm pl-4 pr-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@email.com" required />
+              <input type="text" id="street" name="street"  class="shadow-sm pl-4 pr-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Musterstraße 34" required />
             </div>
             <div>
               <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">PLZ / Ort</label>
-              <input type="text" id="location" name="location" class="shadow-sm pl-4 pr-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="name@email.com" required />
+              <input type="text" id="location" name="location" class="shadow-sm pl-4 pr-36 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="000000 Ortsname" required />
             </div>
           </div>
           <div>
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-Mail</label>
-            <input type="email" id="email" name="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Lass uns wissen, wie wir Dir helfen können" required />
+            <input type="email" id="email" name="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="beispiel@adresse.com" required />
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telefon</label>
-            <input type="number" id="phone" name="phone" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Lass uns wissen, wie wir Dir helfen können" required />
+            <input type="number" id="phone" name="phone" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Telefonnummer" required />
           </div>
           <div class="sm:col-span-2">
             <label for="experience" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Welche Erfahrungen haben Sie im Bereich Lebensmittelgroßhandel und Selbstständigkeit?</label>
@@ -45,7 +45,7 @@ export default function FranchisePage({franchise}) {
           </div>
           <div>
             <label for="money" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Über wie viel Eigenkapital verfügen Sie zum Start in Ihre Selbstständigkeit?</label>
-            <input type="number" id="money" name="money" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Lass uns wissen, wie wir Dir helfen können" required />
+            <input type="number" id="money" name="money" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light" placeholder="Verfügbares Eigenkapital" required />
           </div>
           <div class="sm:col-span-2">
             <label for="questions" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Haben Sie Fragen an uns?</label>
