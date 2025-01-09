@@ -79,6 +79,7 @@ export default function LocationPage({ data }) {
 
   if (locations) {
     const ort = locations.find((item) => item.name === id);
+    console.log(ort);
 
     return (
       <>

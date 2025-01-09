@@ -15,7 +15,7 @@
     // PDF-Datei verarbeiten
     $pdf_tmp_name = $_FILES["letter"]["tmp_name"];
     $pdf_name = $_FILES["letter"]["name"];
-    $pdf_destination = "uploads/" . $pdf_name;
+    $pdf_destination = __DIR__ . "/uploads/" . $pdf_name;
     move_uploaded_file($pdf_tmp_name, $pdf_destination);
 
     // E-Mail senden
@@ -23,7 +23,7 @@
 
     try {
       $mail->setFrom($email, $first_name . ' ' . $last_name);
-      $mail->addAddress('m_reinert@outlook.com');
+      $mail->addAddress('info@alfafood.eu');
       $mail->addAttachment($pdf_destination);
       $mail->isHTML(true);
       $mail->Subject = "Neue Bewerbung";
