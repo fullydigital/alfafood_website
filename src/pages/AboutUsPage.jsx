@@ -86,9 +86,11 @@ export default function AboutUsPage() {
       {/* About Family end */}
       <div className="w-full bg-gray-400 p-12 mb-20">
         <div className="w-11/12 flex justify-center mx-auto">
+        {data.video && data.video.url && (
           <video className="w-5/6 lg:h-300" controls>
-            <source src={data.video.url} type="video/mp4" />
-          </video>
+          <source src={data.video.url} type="video/mp4" />
+        </video>
+        )}
         </div>
       </div>
     </>
