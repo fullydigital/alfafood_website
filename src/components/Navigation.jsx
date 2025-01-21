@@ -67,6 +67,16 @@ export default function Navigation({ data }) {
         color="white"
         className="p-1 font-semibold"
       >
+        <NavLink to="packages" className="flex items-center">
+          Verpackungen
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="white"
+        className="p-1 font-semibold"
+      >
         <NavLink to="career" className="flex items-center">
           Karriere
         </NavLink>

@@ -18,6 +18,7 @@ import Impressum from './pages/Impressum';
 import AGBs from './pages/AGBs';
 import { CookieConsent } from "react-cookie-consent";
 import RegisterPage from "./pages/RegisterPage";
+import PackagingPage from './pages/PackagingPage';
 
 function App() {
   const [carrer, setCarrer] = useState(null);
@@ -29,15 +30,15 @@ function App() {
 
   const query = `
   {
-    careerCollection {
-      items {
-        headline
-        subline
-        text {
-          json
-        }
+  careerCollection {
+    items {
+      headline
+      subline
+      text {
+        json
       }
     }
+  }
   contactPageCollection {
     items {
       headline
@@ -51,33 +52,33 @@ function App() {
     }
   }
   offersPageCollection {
-      items {
-        headline
-        validity
-        offersCollection {
-          items {
-            url
-          }
-        }
-      }
-    }
-  locationOverviewCollection {
-      items {
-        headline
-        text {
-          json
-        }
-      }
-    }
-  contentTypeLocationCollection {
+    items {
+      headline
+      validity
+      offersCollection {
         items {
-        name
-  heroImage {
-  url
-  }
+          url
+        }
       }
     }
   }
+  locationOverviewCollection {
+    items {
+      headline
+      text {
+        json
+      }
+    }
+  }
+  contentTypeLocationCollection {
+    items {
+      name
+      heroImage {
+        url
+      }
+    }
+  }
+}
   `;
 
   useEffect(() => {
@@ -148,6 +149,7 @@ function App() {
         <Route path='/career' element={<CarrerPage data={carrer} locations={locations} />} />
         <Route path='/franchise' element={<FranchisePage franchise={franchise} />} />
         <Route path='/offers' element={<OffersPage locations={locations} offers={offers} />} />
+        <Route path='/packages' element={<PackagingPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/location' element={<LocationOverviewPage data={locationText} />} />
         <Route path='/datenschutz' element={<AGBs />} />
