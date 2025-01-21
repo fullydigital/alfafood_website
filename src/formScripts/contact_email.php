@@ -4,8 +4,8 @@ $email_from = "absender@domain.de";
 $sendermail_antwort = true;
 $name_von_emailfeld = "Email";
 
-$empfaenger = "info@alfafood.eu";
-$mail_cc = "";
+$empfaenger = "m_reinert@outlook.com";
+$mail_cc = "michael.reinert@wesolve-it.com";
 $betreff = "Neues Kontaktformular";
 
 $url_ok = "https://www.alfafood.eu";
