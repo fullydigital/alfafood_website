@@ -68,7 +68,7 @@ export default function Navigation({ data }) {
         className="p-1 font-semibold"
       >
         <NavLink to="packages" className="flex items-center">
-          Verpackungen
+          Eigendruck
         </NavLink>
       </Typography>
       <Typography

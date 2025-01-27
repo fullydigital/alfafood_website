@@ -6,7 +6,7 @@ $name_von_emailfeld = "Email";
 
 $empfaenger = "info@alfafood.eu";
 $mail_cc = "";
-$betreff = "Neues Verpackungsanfrage";
+$betreff = "Neue Lieferantenanfrage";
 
 $url_ok = "https://www.alfafood.eu";
 $url_fehler = "https://www.alfafood.eu";
