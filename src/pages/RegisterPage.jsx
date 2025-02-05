@@ -8,14 +8,12 @@ const REGISTER_MUTATION = gql`
     $password: String,
     $firstname: String,
     $lastname: String
-    $username: String
   ) {
     createUser(
       email: $email,
       password: $password,
       firstName: $firstname
       lastName: $lastname
-      username: $username
     ) {
       token
     }
@@ -28,9 +26,6 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const username = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] && 15 >> c / 4).toString(16)
-    );
 
   const [register] = useMutation(REGISTER_MUTATION, {
     variables: {
@@ -38,7 +33,6 @@ export default function RegisterPage() {
       password: password,
       firstname: firstName,
       lastname: lastName,
-      username: username
     },
     onCompleted: (data) => {
       navigate('/');
