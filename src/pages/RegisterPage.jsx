@@ -12,8 +12,9 @@ const REGISTER_MUTATION = gql`
     createUser(
       email: $email,
       password: $password,
-      firstName: $firstname
-      lastName: $lastname
+      firstName: $firstname,
+      lastName: $lastname,
+      username: $email
     ) {
       token
     }
@@ -33,6 +34,7 @@ export default function RegisterPage() {
       password: password,
       firstname: firstName,
       lastname: lastName,
+      username: email
     },
     onCompleted: (data) => {
       navigate('/');
