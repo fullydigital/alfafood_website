@@ -12,6 +12,7 @@ export default function FranchiseHomePage() {
   const [data, setData] = useState(null);
   const [divOpen, setDivOpen] = useState('');
   const [categories, setCategories] = useState([]);
+  const [newsletters, setNewsletters] = useState([]);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const handleDivOpen = (value) => setDivOpen(divOpen === value ? 0 : value);
@@ -31,6 +32,12 @@ export default function FranchiseHomePage() {
           }
         }
       }
+        newsletterCollection {
+          items {
+            heading
+            content
+          }
+        }
     }
   `;
 
@@ -57,8 +64,10 @@ export default function FranchiseHomePage() {
         let unique = [...new Set(frCategories)];
         setCategories(unique);
         setData(data.franchiseCollection.items);
+        setNewsletters(data.newsletterCollection.items);
+        console.log(data);
       })
-  }, [query, categories]);
+  }, []);
 
   if (!data) {
     return 'Loading ...';
@@ -69,10 +78,10 @@ export default function FranchiseHomePage() {
       <div className="w-full h-72 text-white flex bg-cover" style={{ backgroundImage: `url(${background})` }}>
         <h1 className='text-6xl font-semibold mx-auto my-auto'>Alfafood Franchise</h1>
       </div>
-      <div className='flex flex-row justify-center gap-10 mt-20 mx-20 flex-wrap'>
+      <div className='flex flex-row gap-10 mt-20 mx-auto max-w-screen-xl flex-wrap justify-center lg:justify-start'>
         {categories.map((category, index) => {
           return (
-            <div className='h-48 w-48 bg-red-600 rounded-lg' onClick={() => handleDivOpen(category)}>
+            <div className='h-48 w-48 bg-red-600 rounded-lg' key={index} onClick={() => handleDivOpen(category)}>
               <p className='my-20 font-semibold text-white'>{category}</p>
             </div>
           )
@@ -80,7 +89,7 @@ export default function FranchiseHomePage() {
       </div>
 
 
-      <div className='w-3/4 mx-auto mt-12 mb-20'>
+      <div className='w-3/4 mx-auto mt-12 mb-20 max-w-screen-2xl'>
         {
           data.map((item) => {
             return (
@@ -114,6 +123,19 @@ export default function FranchiseHomePage() {
             )
           })
         }
+      </div>
+
+      <div className='w-3/4 mx-auto mt-12 mb-20 max-w-screen-2xl'>
+        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">Newsletter</h2>
+        <div className="space-y-8">
+          {newsletters.map((newsletter, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4">{newsletter.heading}</h3>
+              <hr className="my-4 border-gray-300 dark:border-gray-700" />
+              <p className="text-gray-700 dark:text-gray-300 text-left">{newsletter.content}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
