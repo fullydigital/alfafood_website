@@ -13,9 +13,11 @@ export default function FranchiseHomePage() {
   const [divOpen, setDivOpen] = useState('');
   const [categories, setCategories] = useState([]);
   const [newsletters, setNewsletters] = useState([]);
+  const [openNewsletter, setOpenNewsletter] = useState(null);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const handleDivOpen = (value) => setDivOpen(divOpen === value ? 0 : value);
+  const handleNewsletterOpen = (index) => setOpenNewsletter(openNewsletter === index ? null : index);
 
   const query = `
     {
@@ -128,11 +130,17 @@ export default function FranchiseHomePage() {
       <div className='w-3/4 mx-auto mt-12 mb-20 max-w-screen-2xl'>
         <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">Newsletter</h2>
         <div className="space-y-8">
-          {newsletters.map((newsletter, index) => (
+        {newsletters.map((newsletter, index) => (
             <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-4">{newsletter.heading}</h3>
-              <hr className="my-4 border-gray-300 dark:border-gray-700" />
-              <p className="text-gray-700 dark:text-gray-300 text-left">{newsletter.content}</p>
+              <h3 className="text-2xl font-bold mb-4 cursor-pointer" onClick={() => handleNewsletterOpen(index)}>
+                {newsletter.heading}
+              </h3>
+              {openNewsletter === index && (
+                <>
+                  <p className="text-gray-700 dark:text-gray-300 text-left">{newsletter.content}</p>
+                  <hr className="my-4 border-gray-300 dark:border-gray-700" />
+                </>
+              )}
             </div>
           ))}
         </div>
