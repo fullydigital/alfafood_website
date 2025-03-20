@@ -151,7 +151,7 @@ export default function FranchiseHomePage() {
                               :
                                 item.contentType === 'application/pdf' ?
                                   <iframe src={item.url} className='h-300 w-200 mx-auto' title={key}
-                                    onClick={() => handlePdfOpen(item.sys.id, item.title)}
+                                    onLoad={() => handlePdfOpen(item.sys.id, item.title)}
                                   /> :
                                 item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='lg:h-[700px] mx-auto' alt=''
                                   onClick={() => handleImageClick(item.sys.id, item.title)}
