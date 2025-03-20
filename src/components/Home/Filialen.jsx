@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Filialen({ data, locations }) {
   return (
-    <div className='w-3/4 xl:w-9/12 mt-12 mx-auto text-left'>
+    <div className='w-3/4 xl:w-9/12 mt-12 mx-auto text-left max-w-screen-2xl'>
       <h2 className='text-5xl font-bold mb-4'>{data.headline ? data.headline : 'Unsere Standorte'}</h2>
       <h3 className='text-xl font-semibold mb-4'>{data.subline ? data.subline : 'Geniesse unsere köstlichen Gerichte an 6 Standorten in Deutschland'}</h3>
       <p className='mb-10'>{data.text ? data.text : 'Jedes auf seine Art irgendwie anders – doch immer das Original bona’me mit großer Liebe zum Detail und den authentischen Speisen. Genieße Deine Pide gleich 3 x in Köln, die leckeren Makarna am Mittag in Hamburg, das legendäre Nan û Köfte in Hannover die Meze in Dortmund oder alles zusammen im neuen bona’me Münster.'}</p>

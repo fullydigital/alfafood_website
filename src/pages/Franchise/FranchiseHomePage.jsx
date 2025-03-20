@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
 import background from '../../assets/aboutUsImage.jpg';
+import { gql, useMutation, useQuery } from '@apollo/client';
 
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
   unmount: { scale: 0.9 }
 };
+
+const MARK_FILE_AS_VIEWED = gql`
+    mutation MarkFileAsViewed($fileId: String!, $fileType: String!, $fileTitle: String!, $userId: Int!) {
+      markFileAsViewed(fileId: $fileId, fileType: $fileType, fileTitle: $fileTitle, userId: $userId) {
+        fileId
+        userId
+        fileTitle
+        fileType
+      }
+    }
+  `;
+
+const ME_QUERY = gql`
+  query Me {
+    me {
+      id
+    }
+  }
+`;
 
 export default function FranchiseHomePage() {
   const [open, setOpen] = useState(0);
@@ -14,10 +34,23 @@ export default function FranchiseHomePage() {
   const [categories, setCategories] = useState([]);
   const [newsletters, setNewsletters] = useState([]);
   const [openNewsletter, setOpenNewsletter] = useState(null);
+  const [markAsViewed] = useMutation(MARK_FILE_AS_VIEWED);
+  const { data: meData } = useQuery(ME_QUERY);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const handleDivOpen = (value) => setDivOpen(divOpen === value ? 0 : value);
   const handleNewsletterOpen = (index) => setOpenNewsletter(openNewsletter === index ? null : index);
+  const handleVideoStart = (fileId, fileTitle) => {
+    markAsViewed({ variables: { fileId: fileId, fileType: 'Video', fileTitle: fileTitle, userId: meData.me.id } });
+  }
+
+  const handlePdfOpen = (fileId, fileTitle) => {
+    markAsViewed({ variables: { fileId: fileId, fileType: 'PDF', fileTitle: fileTitle, userId: meData.me.id } });
+  }
+
+  const handleImageClick = (fileId, fileTitle) => {
+    markAsViewed({ variables: { fileId: fileId, fileType: 'Bild', fileTitle: fileTitle, userId: meData.me.id } });
+  }
 
   const query = `
     {
@@ -29,7 +62,11 @@ export default function FranchiseHomePage() {
           contentCollection {
             items {
               url
+              title
               contentType
+              sys {
+                id
+              }
             }
           }
         }
@@ -104,16 +141,21 @@ export default function FranchiseHomePage() {
                       return (
                         <div>
                           {
-                              item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300" controls>
+                              item.contentType === 'video/mp4' ? <video className="w-5/6 lg:h-300" controls
+                                onPlay={() => handleVideoStart(item.sys.id, item.title)}>
                                 <source src={item.url} type="video/mp4" />
                               </video> :
-                              item.contentType === 'video/quicktime' ? <video className="w-5/6 lg:h-300 mx-auto" controls>
+                              item.contentType === 'video/quicktime' ? <video className="w-5/6 lg:h-300 mx-auto" controls onPlay={() => handleVideoStart(item.sys.id, item.title)}>
                                 <source src={item.url} type="video/mp4" />
                               </video>
                               :
                                 item.contentType === 'application/pdf' ?
-                                  <iframe src={item.url} className='h-300 w-200 mx-auto' title={key} /> :
-                                item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='lg:h-[700px] mx-auto' alt='' />
+                                  <iframe src={item.url} className='h-300 w-200 mx-auto' title={key}
+                                    onClick={() => handlePdfOpen(item.sys.id, item.title)}
+                                  /> :
+                                item.contentType === 'image/jpeg' || 'image/png' ? <img src={item.url} className='lg:h-[700px] mx-auto' alt=''
+                                  onClick={() => handleImageClick(item.sys.id, item.title)}
+                                />
                                 : null
                           }
                         </div>

@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export default function Career() {
   return (
-    <div className="w-full bg-black text-white pb-10 pt-10 lg:pt-16 mt-20">
+    <div className='w-full bg-black text-white'>
+    <div className="pb-10 pt-10 lg:pt-16 mt-20 max-w-screen-2xl mx-auto">
       <div className="w-10/12 lg:w-9/12 mx-auto flex flex-col lg:flex-row lg:flex-">
         <div className="flex flex-col mb-8 lg:text-left lg:w-3/4">
           <h3 className='text-2xl lg:text-3xl lg:text-left mb-4'><span className='text-3xl lg:text-5xl font-semibold'>Karriere bei<br /></span> Alfafood GmbH</h3>
@@ -14,6 +15,7 @@ export default function Career() {
           <button className='bg-red-700 py-3 w-1/2 mx-auto lg:w-3/4 mt-4'><NavLink to="/career">Mehr erfahren!</NavLink></button>
         </div>
       </div>
+    </div>
     </div>
   )
 }

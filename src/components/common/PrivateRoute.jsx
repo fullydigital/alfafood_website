@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    let token = localStorage.getItem('auth-token');
+    let token = localStorage.getItem('Authorization');
     if (token) {
       let tokenExpiration = jwtDecode(token).exp;
       let dateNow = new Date();
@@ -30,7 +30,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   // return (
   //   <Route {...rest} element={(props) => (!isAuthenticated ? <Navigate replace to="/" /> : <Outlet {...props} />)} />
   // );
-  return isAuthenticated ? <Outlet /> : <Navigate replave to="/" exact />;
+  return isAuthenticated ? <Outlet /> : <Navigate replace to="/" exact />;
 };
 
 export default PrivateRoute;

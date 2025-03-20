@@ -19,9 +19,6 @@ const LOGIN_MUTATION = gql`
 `
 
 
-
-
-
 const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -33,7 +30,7 @@ const LoginPage = () => {
       password: password
     },
     onCompleted: (data) => {
-      localStorage.setItem(AUTH_TOKEN, data.tokenAuth.token);
+      localStorage.setItem(AUTH_TOKEN, `JWT ${data.tokenAuth.token}`);
       navigate('/franchiseMember');
     }
   });

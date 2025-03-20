@@ -20,6 +20,7 @@ import { CookieConsent } from "react-cookie-consent";
 import RegisterPage from "./pages/RegisterPage";
 import PackagingPage from './pages/PackagingPage';
 import SupplierPage from './pages/SupplierPage';
+import { AdminDashboard } from './pages/AdminDashboard';
 
 function App() {
   const [carrer, setCarrer] = useState(null);
@@ -160,6 +161,7 @@ function App() {
         <Route path='/Lieferant' element={<SupplierPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/franchiseMember" element={<FranchiseHomePage />} />
+          <Route path="/adminDashboard" element={<AdminDashboard />} />
         </Route>
       </Routes>
       <Footer />
