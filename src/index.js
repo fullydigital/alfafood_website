@@ -10,8 +10,8 @@ import { AUTH_TOKEN } from './constants';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'http://0.0.0.0:8000/graphql/'
-  // uri: 'https://stingray-app-yfsog.ondigitalocean.app/graphql/'
+  // uri: 'http://0.0.0.0:8000/graphql/'
+  uri: 'https://stingray-app-yfsog.ondigitalocean.app/graphql/'
 });
 
 const authLink = setContext((_, { headers }) => {
